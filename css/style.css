@@ -247,3 +247,105 @@ h3 {
   color: #bbc6d8;
   margin: 0;
 }
+
+.capitulo {
+  min-height: 585px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid #ffffff17;
+}
+
+.capitulo-conteudo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  padding-block: 72px;
+}
+
+.capitulo-texto {
+  position: relative;
+  z-index: 1;
+}
+
+.capitulo .etiqueta {
+  color: var(--cor-destaque);
+}
+
+.capitulo .separador {
+  color: #aab8ce;
+  padding-inline: 8px;
+}
+
+.capitulo-sobre {
+  color: var(--cor-suave);
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 9px;
+}
+
+.capitulo h2 {
+  font-size: clamp(43px, 5.8vw, 76px);
+  letter-spacing: -.045em;
+  margin: 0;
+  max-width: 590px;
+}
+
+.capitulo-nome {
+  display: block;
+  color: var(--cor-destaque);
+  margin-top: 4px;
+}
+
+.capitulo-descricao {
+  color: var(--cor-suave);
+  max-width: 510px;
+  margin: 23px 0 32px;
+}
+
+.botao-entrar {
+  background: var(--cor-destaque);
+  color: var(--cor-botao);
+}
+
+.capitulo-arte {
+  position: relative;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.capitulo-arte img {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 26px 35px #0006);
+  transition: transform .3s ease;
+}
+
+.capitulo:hover .capitulo-arte img {
+  transform: translateY(-7px);
+}
+
+.numero-decorativo {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: clamp(200px, 26vw, 360px);
+  line-height: 1;
+  font-weight: 900;
+  color: var(--numero);
+  user-select: none;
+}
+
+.capitulo--ps2 {
+  --cor-destaque: #80cfff;
+  --cor-suave: #c1d0e4;
+  --cor-botao: #071325;
+  --numero: #85baff12;
+  background: radial-gradient(circle at 85% 35%, #183970, transparent 48%), #0b1427;
+}
