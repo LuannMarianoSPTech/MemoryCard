@@ -369,3 +369,17 @@ h3 {
     height: auto;
     object-fit: contain;
 }
+
+.capitulo--ps4 {
+  --cor-destaque: #a5baff;
+  --cor-suave: #c2cce8;
+  --cor-botao: #0b1742;
+  --numero: #97baff15;
+  background: radial-gradient(circle at 85% 35%, #163e9c, transparent 50%), #10182e;
+}
+
+.capitulo--ps4 .capitulo-arte img {
+    width: 450px;
+    height: auto;
+    object-fit: contain;
+}
