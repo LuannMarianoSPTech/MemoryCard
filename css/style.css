@@ -230,3 +230,20 @@ h3 {
   letter-spacing: .2em;
   color: #7f94b8;
 }
+
+.introducao-capitulos {
+  background: #101a2d;
+  padding: 65px 0;
+  scroll-margin-top: 20px;
+}
+
+.introducao-capitulos h2 {
+  font-size: clamp(32px, 5vw, 56px);
+  letter-spacing: -.035em;
+  margin: 0 0 15px;
+}
+
+.introducao-capitulos p:not(.etiqueta) {
+  color: #bbc6d8;
+  margin: 0;
+}
