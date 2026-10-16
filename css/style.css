@@ -349,3 +349,23 @@ h3 {
   --numero: #85baff12;
   background: radial-gradient(circle at 85% 35%, #183970, transparent 48%), #0b1427;
 }
+
+.capitulo--ps2 .capitulo-arte img {
+    width: 450px;
+    height: auto;
+    object-fit: contain;
+}
+
+.capitulo--ps3 {
+  --cor-destaque: #ff9caf;
+  --cor-suave: #c9bdc8;
+  --cor-botao: #210d18;
+  --numero: #ee8b9c12;
+  background: radial-gradient(circle at 85% 40%, #5a263d, transparent 50%), #17131d;
+}
+
+.capitulo--ps3 .capitulo-arte img {
+    width: 350px;
+    height: auto;
+    object-fit: contain;
+}
