@@ -383,3 +383,18 @@ h3 {
     height: auto;
     object-fit: contain;
 }
+
+.capitulo--ps5 {
+  --cor-destaque: #2158a7;
+  --cor-suave: #455d81;
+  --cor-botao: #fff;
+  --numero: #2b60ac13;
+  background: radial-gradient(circle at 85% 35%, #b8d3ff, transparent 53%), #edf3fd;
+  color: #11264b;
+}
+
+.capitulo--ps5 .capitulo-arte img {
+    width: 300px;
+    height: auto;
+    object-fit: contain;
+}
