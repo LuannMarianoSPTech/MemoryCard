@@ -412,3 +412,21 @@ h3 {
     height: auto;
     object-fit: contain;
 }
+
+.sobre {
+  background: #0b1120;
+  padding: 95px 0 120px;
+}
+
+.sobre h2 {
+  font-size: clamp(36px, 6vw, 68px);
+  margin: 0;
+  letter-spacing: -.04em;
+}
+
+.sobre-interno>p:last-child {
+  color: #b9c5d7;
+  font-size: 17px;
+  max-width: 680px;
+  line-height: 1.8;
+}
