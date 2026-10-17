@@ -365,7 +365,7 @@ h3 {
 }
 
 .capitulo--ps3 .capitulo-arte img {
-    width: 350px;
+    width: 320px;
     height: auto;
     object-fit: contain;
 }
@@ -395,6 +395,20 @@ h3 {
 
 .capitulo--ps5 .capitulo-arte img {
     width: 300px;
+    height: auto;
+    object-fit: contain;
+}
+
+.capitulo--pc {
+  --cor-destaque: #83ead9;
+  --cor-suave: #c6d4e4;
+  --cor-botao: #082928;
+  --numero: #6de2cc13;
+  background: radial-gradient(circle at 85% 35%, #3c285e, transparent 52%), #11182a;
+}
+
+.capitulo--pc .capitulo-arte img {
+    width: 400px;
     height: auto;
     object-fit: contain;
 }
