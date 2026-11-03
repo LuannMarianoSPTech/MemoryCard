@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="MemoryCard: minhas memórias da plataforma PlayStation 2."
+    />
+    <title>MemoryCard | PlayStation 2</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/plataformas.css" />
+    <link rel="stylesheet" href="../css/ps2.css" />
+    <script src="../js/script.js" defer></script>
+  </head>
+  <body class="pagina-console pagina-ps2" id="topo">
+    <header class="cabecalho">
+      <a
+        href="../index.html"
+        class="marca"
+        aria-label="MemoryCard, página inicial"
+        >MEMORY<span>CARD</span><span class="marca-ponto">.</span></a
+      >
+      <nav aria-label="Navegação da página">
+        <a href="../index.html#capitulos">← Voltar aos capítulos</a>
+        <a href="#jogos">Meus jogos</a>
+      </nav>
+    </header>
+
+    <main>
+      <section
+        class="apresentacao largura-conteudo"
+        aria-labelledby="titulo-plataforma"
+      >
+        <div class="conteudo-apresentacao">
+          <p class="etiqueta">CAPÍTULO 01 / PLAYSTATION 2</p>
+          <h1 id="titulo-plataforma">
+            Onde tudo começou<span>PlayStation 2</span>
+          </h1>
+          <p class="descricao">
+            Uma viagem pelos jogos que fizeram parte da minha história. Aqui
+            reúno os títulos, as lembranças e os momentos que tornaram o PS2
+            especial para mim.
+          </p>
+          <a class="botao-principal" href="#jogos">Explorar meus jogos ↓</a>
+        </div>
+        <div class="envoltorio-console">
+          <img
+            class="imagem-console"
+            src="../img/PS2-Fat-Console-Set.png"
+            alt="Ilustração estilizada de PlayStation 2"
+          />
+        </div>
+      </section>
+
+      <section class="secao-jogos" id="jogos" aria-labelledby="titulo-jogos">
+        <div class="largura-conteudo">
+          <p class="etiqueta">ARQUIVO DE MEMÓRIAS / PS2</p>
+          <div class="titulo-galeria">
+            <div>
+              <h2 id="titulo-jogos">Jogos que marcaram essa fase</h2>
+              <p class="texto-apoio">
+                Meus primeiros jogos e as lembranças que guardo deles.
+              </p>
+            </div>
+            <span class="contador-jogos" aria-live="polite"
+              >Jogos cadastrados: <strong id="total-jogos">0</strong></span
+            >
+          </div>
+
+          <label class="rotulo-busca" for="busca-jogo"
+            >Buscar um jogo nessa plataforma</label
+          >
+          <input
+            class="busca-jogo"
+            id="busca-jogo"
+            type="search"
+            placeholder="Digite o nome ou gênero do jogo..."
+            autocomplete="off"
+          />
+
+          <div class="grade-jogos">
+            <article class="cartao-jogo">
+              <img
+                alt="Arte ilustrativa de God of War"
+                class="imagem-jogo"
+                data-imagem-reserva="../imagens/sem-capa-ps2.svg"
+                loading="lazy"
+                src="../img/gow.jpeg"
+              />
+              <div class="conteudo-jogo">
+                <span class="genero">Ação e aventura</span>
+                <h3>God of War I e II</h3>
+                <p class="resumo">Uma jornada cheia de batalhas e mitologia.</p>
+                <button
+                  aria-expanded="false"
+                  class="botao-memoria"
+                  type="button"
+                >
+                  Ler minha memória +
+                </button>
+                <p class="memoria" hidden="">
+                  Uma das minhas lembranças é jogar God of War com meu
+                  pai(drasto). Adorava passar horas jogando com ele!
+                </p>
+              </div>
+            </article>
+          </div>
+          <p class="sem-resultados" id="sem-resultados" hidden>
+            Nenhum jogo encontrado. Tente outra busca.
+          </p>
+        </div>
+      </section>
+      <section class="fim-capitulo largura-conteudo">
+        <p class="etiqueta">FIM DO CAPÍTULO 01</p>
+        <h2>Quer revisitar outra época?</h2>
+        <a class="botao-voltar" href="../index.html#capitulos"
+          >← Voltar à seleção de capítulos</a
+        >
+      </section>
+    </main>
+    <footer class="rodape">
+      <p>
+        MemoryCard <span class="ponto">●</span> Um projeto sobre jogos e
+        memórias.
+      </p>
+      <a href="../index.html#capitulos">Voltar aos capítulos ↑</a>
+    </footer>
+  </body>
+</html>

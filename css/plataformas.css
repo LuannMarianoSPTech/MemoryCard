@@ -1,0 +1,40 @@
+.pagina-console { background: var(--fundo); color: var(--texto); }
+.apresentacao { display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: 18px; min-height: 540px; padding-block: 40px 68px; }
+.conteudo-apresentacao h1 { font-size: clamp(42px, 6vw, 78px); letter-spacing: -.045em; margin: 0; }
+.conteudo-apresentacao h1 span { color: var(--primaria); display: block; margin-top: 6px; }
+.envoltorio-console { background: var(--fundo-console); border-radius: 50%; min-height: 380px; display: flex; justify-content: center; align-items: center; }
+.imagem-console { display: block; width: min(100%, 510px); filter: drop-shadow(0 22px 26px #0003); }
+.secao-jogos { padding: 80px 0 100px; background: var(--fundo-galeria); }
+.titulo-galeria { display: flex; justify-content: space-between; gap: 22px; align-items: flex-start; margin-bottom: 22px; }
+.titulo-galeria h2 { font-size: clamp(29px, 4vw, 44px); margin: 0 0 10px; letter-spacing: -.03em; }
+.texto-apoio { color: var(--texto-suave); margin: 0; }
+.contador-jogos { white-space: nowrap; font-size: 13px; color: var(--texto-suave); border: 1px solid var(--borda); padding: 9px 12px; border-radius: 100px; }
+.contador-jogos strong { color: var(--primaria); }
+.rotulo-busca { display: block; font-size: 13px; font-weight: bold; margin: 22px 0 7px; }
+.busca-jogo { width: min(100%, 450px); padding: 13px 15px; background: var(--cartao); border: 1px solid var(--borda); border-radius: 10px; color: var(--texto); margin-bottom: 32px; }
+.busca-jogo::placeholder { color: var(--texto-suave); opacity: .85; }
+.grade-jogos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 23px; }
+.cartao-jogo { background: var(--cartao); border: 1px solid var(--borda); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: transform .18s ease, border-color .18s ease; }
+.cartao-jogo:hover { transform: translateY(-4px); border-color: var(--primaria); }
+.imagem-jogo { width: 100%; height: 215px; object-fit: cover; background: var(--cartao); display: block; }
+.conteudo-jogo { padding: 23px; display: flex; flex-direction: column; flex: 1; align-items: flex-start; }
+.genero { font-size: 12px; letter-spacing: .08em; font-weight: 700; color: var(--primaria); text-transform: uppercase; }
+.cartao-jogo h3 { margin: 9px 0 10px; font-size: 23px; }
+.resumo { color: var(--texto-suave); margin: 0 0 22px; font-size: 14px; }
+.botao-memoria { border: 0; background: none; cursor: pointer; padding: 5px 0; color: var(--primaria); font-weight: 700; margin-top: auto; }
+.botao-memoria:hover { text-decoration: underline; }
+.memoria { width: 100%; margin: 17px 0 0; background: var(--fundo-memoria); padding: 14px; border-left: 3px solid var(--primaria); border-radius: 0 7px 7px 0; font-size: 14px; }
+.sem-resultados { border: 1px dashed var(--borda); border-radius: 10px; padding: 25px; color: var(--texto-suave); text-align: center; }
+.fim-capitulo { text-align: center; padding-block: 85px 105px; }
+.fim-capitulo h2 { font-size: clamp(28px, 4vw, 42px); margin: 0 0 24px; }
+@media (max-width: 980px) { .grade-jogos { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 750px) {
+  .apresentacao { grid-template-columns: 1fr; padding-block: 40px; }
+  .envoltorio-console { min-height: 240px; width: min(100%, 410px); margin-inline: auto; }
+  .imagem-console { width: min(100%, 340px); }
+  .titulo-galeria { flex-direction: column; }
+  .grade-jogos { grid-template-columns: 1fr; }
+  .imagem-jogo { height: 225px; }
+  .secao-jogos { padding-block: 55px 85px; }
+}
+@media (prefers-reduced-motion: reduce) { .cartao-jogo { transition: none; } }
