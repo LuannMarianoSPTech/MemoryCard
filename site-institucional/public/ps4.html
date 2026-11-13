@@ -5,20 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="MemoryCard: minhas memórias da plataforma PlayStation 4.">
   <title>MemoryCard | PlayStation 4</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/plataformas.css">
-  <link rel="stylesheet" href="../css/ps4.css">
-  <script src="../js/script.js" defer></script>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/plataformas.css">
+  <link rel="stylesheet" href="./css/ps4.css">
+  <script src="js/script.js" defer></script>
 </head>
 <body class="pagina-console pagina-ps4" id="topo">
   <header class="cabecalho">
-    <a href="../index.html" class="marca" aria-label="MemoryCard, página inicial">MEMORY<span>CARD</span><span class="marca-ponto">.</span></a>
+    <a href="./index.html" class="marca" aria-label="MemoryCard, página inicial">MEMORY<span>CARD</span><span class="marca-ponto">.</span></a>
     <nav aria-label="Navegação da página">
-      <a href="../index.html#capitulos">← Voltar aos capítulos</a>
+      <a href="./index.html#capitulos">← Voltar aos capítulos</a>
       <a href="#jogos">Meus jogos</a>
     </nav>
   </header>
-
   <main>
     <section class="apresentacao largura-conteudo" aria-labelledby="titulo-plataforma">
       <div class="conteudo-apresentacao">
@@ -28,9 +27,35 @@
         <a class="botao-principal" href="#jogos">Explorar meus jogos ↓</a>
       </div>
       <div class="envoltorio-console">
-        <img class="imagem-console" src="../img/Sony-PlayStation-4-PS4-DualShock-4.png" alt="Ilustração estilizada de PlayStation 4">
+        <img class="imagem-console" src="./assets/Sony-PlayStation-4-PS4-DualShock-4.png" alt="Ilustração estilizada de PlayStation 4">
       </div>
     </section>
+    <section class="secao-jogos" id="jogos" aria-labelledby="titulo-jogos">
+      <div class="largura-conteudo">
+        <p class="etiqueta">ARQUIVO DE MEMÓRIAS / PS4</p>
+        <div class="titulo-galeria">
+          <div>
+            <h2 id="titulo-jogos">Jogos que marcaram essa fase</h2>
+            <p class="texto-apoio">Substitua os jogos de exemplo pelas suas memórias do PS4.</p>
+          </div>
+          <span class="contador-jogos" aria-live="polite">Jogos cadastrados: <strong id="total-jogos">0</strong></span>
+        </div>
+        <label class="rotulo-busca" for="busca-jogo">Buscar um jogo nessa plataforma</label>
+        <input class="busca-jogo" id="busca-jogo" type="search" placeholder="Digite o nome ou gênero do jogo..." autocomplete="off">
+        <div class="grade-jogos">
+        <article class="cartao-jogo">
+          <img class="imagem-jogo" src="./assets/fortnite_destaque_2.webp" alt="Imagem provisória do jogo" loading="lazy">
+          <div class="conteudo-jogo">
+            <span class="genero">Battle Royale</span>
+            <h3>Fortnite</h3>
+            <p class="resumo">Fortnite é um jogo de batalha royale em que 100 jogadores disputam para ser o último sobrevivente, coletando recursos, construindo estruturas e enfrentando outros jogadores.</p>
+            <button class="botao-memoria" type="button" aria-expanded="false">Ler minha memória +</button>
+            <p class="memoria" hidden>Lembro de passar horas jogando com os amigos, tentando conseguir a tão sonhada Vitória Royale. As partidas eram cheias de momentos engraçados, disputas inesperadas e muita rivalidade. Mais do que ganhar, o divertido era compartilhar esses momentos com a galera!</p>
+          </div>
+        </article>
+        </div>
+        </div>
+        </section>
   </main>
 <footer class="rodape">
   <p>MemoryCard <span class="ponto">●</span> Um projeto sobre jogos e memórias.</p>
