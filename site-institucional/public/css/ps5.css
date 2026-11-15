@@ -1,0 +1,11 @@
+:root {
+  --fundo: #f0f5fc;
+  --cartao: #ffffff;
+  --texto: #172c4d;
+  --texto-suave: #516782;
+  --primaria: #2869c9;
+  --borda: #ccd8ed;
+  --fundo-console: radial-gradient(circle, #d3e4ff, transparent 67%);
+  --fundo-galeria: #e8f0fa;
+  --fundo-memoria: #e7effb;
+}

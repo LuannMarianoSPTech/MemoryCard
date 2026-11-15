@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MemoryCard: minhas memórias da plataforma PlayStation 5.">
+  <title>MemoryCard | PlayStation 5</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/plataformas.css">
+  <link rel="stylesheet" href="./css/ps5.css">
+  <script src="./js/script.js" defer></script>
+</head>
+<body class="pagina-console pagina-ps5" id="topo">
+  <header class="cabecalho">
+    <a href="./index.html" class="marca" aria-label="MemoryCard, página inicial">MEMORY<span>CARD</span><span class="marca-ponto">.</span></a>
+    <nav aria-label="Navegação da página">
+      <a href="./index.html#capitulos">← Voltar aos capítulos</a>
+      <a href="#jogos">Meus jogos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="apresentacao largura-conteudo" aria-labelledby="titulo-plataforma">
+      <div class="conteudo-apresentacao">
+        <p class="etiqueta">CAPÍTULO 04 / PLAYSTATION 5</p>
+        <h1 id="titulo-plataforma">O próximo nível<span>PlayStation 5</span></h1>
+        <p class="descricao">Este capítulo vai reunir os jogos e as experiências que fazem parte da minha trajetória no PlayStation 5.</p>
+        <a class="botao-principal" href="#jogos">Explorar meus jogos ↓</a>
+      </div>
+      <div class="envoltorio-console">
+        <img class="imagem-console" src="./assets/Black_and_white_Playstation_5_base_edition_with_controller.png.webp" alt="Ilustração estilizada de PlayStation 5">
+      </div>
+    </section>
+    <section class="secao-jogos" id="jogos" aria-labelledby="titulo-jogos">
+      <div class="largura-conteudo">
+        <p class="etiqueta">ARQUIVO DE MEMÓRIAS / PS5</p>
+        <div class="titulo-galeria">
+          <div>
+            <h2 id="titulo-jogos">Jogos que marcaram essa fase</h2>
+            <p class="texto-apoio">Substitua os jogos de exemplo pelas suas memórias do PS5.</p>
+          </div>
+          <span class="contador-jogos" aria-live="polite">Jogos cadastrados: <strong id="total-jogos">0</strong></span>
+        </div>
+        <label class="rotulo-busca" for="busca-jogo">Buscar um jogo nessa plataforma</label>
+        <input class="busca-jogo" id="busca-jogo" type="search" placeholder="Digite o nome ou gênero do jogo..." autocomplete="off">
+        <div class="grade-jogos">
+        <article class="cartao-jogo">
+          <img class="imagem-jogo" src="./assets/gta6-prevendas.webp" alt="Imagem GTA VI">
+          <div class="conteudo-jogo">
+            <span class="genero">Mundo Aberto - Ação e Aventura</span>
+            <h3>GTA VI</h3>
+            <p class="resumo">GTA VI é o ultimo capítulo lançado da franquia Grand Theft Auto, ambientado em Vice City, com um mundo aberto inspirado na Flórida e uma história protagonizada por Lucia e Jason.</p>
+            <button class="botao-memoria" type="button" aria-expanded="false">Ler minha memória +</button>
+            <p class="memoria" hidden>Quero finalmente conhecer Vice City, explorar o novo mundo aberto, acompanhar a história de Lucia e Jason e descobrir todas as novidades que o jogo trouxe. Também tenho muita expectativa para experimentar o GTA Online e criar novas lembranças com essa nova geração da franquia!</p>
+          </div>
+        </article>
+        </div>
+        <p class="sem-resultados" id="sem-resultados" hidden>Nenhum jogo encontrado. Tente outra busca.</p>
+      </div>
+    </section>
+    <section class="fim-capitulo largura-conteudo">
+      <p class="etiqueta">FIM DO CAPÍTULO 04</p>
+      <h2>Quer revisitar outra época?</h2>
+      <a class="botao-voltar" href="../index.html#capitulos">← Voltar à seleção de capítulos</a>
+    </section>
+  </main>
+<footer class="rodape">
+  <p>MemoryCard <span class="ponto">●</span> Um projeto sobre jogos e memórias.</p>
+  <a href="../index.html#capitulos">Voltar aos capítulos ↑</a>
+</footer>
+</body>
+</html>
