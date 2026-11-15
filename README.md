@@ -1,75 +1,131 @@
-<div align="center">
+# 🎮 MemoryCard
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f325f,100:123d72&height=120&section=header" alt="" width="100%" />
+**A vida passa. Os jogos ficam.**
 
-<img src=".docs/.assets/logo-blue-cheese.png" alt="Logo Blue Cheese Solutions" width="320" />
+O **MemoryCard** é um projeto pessoal e acadêmico que transforma minha trajetória com videogames em uma máquina do tempo interativa. Cada plataforma representa um capítulo da minha história e reúne os jogos, as descobertas e as memórias que marcaram diferentes fases da minha vida.
 
-### Monitore o ambiente. *Aperfeiçoe a maturação.*
+Mais do que listar títulos, a proposta é mostrar como os jogos também guardam lembranças de pessoas, lugares e momentos especiais.
 
-**Monitoramento de temperatura e umidade do ar na maturação de queijos azuis.**
+## 🕹️ Explore os capítulos
 
-<img src="https://img.shields.io/badge/Arduino-UNO%20R3-123d72?style=for-the-badge&logo=arduino&logoColor=f8f4ec" alt="Arduino" />
-<img src="https://img.shields.io/badge/Node.js-API-123d72?style=for-the-badge&logo=nodedotjs&logoColor=f8f4ec" alt="Node.js" />
-<img src="https://img.shields.io/badge/MySQL-Banco%20de%20Dados-123d72?style=for-the-badge&logo=mysql&logoColor=f8f4ec" alt="MySQL" />
-<img src="https://img.shields.io/badge/HTML%20%2B%20CSS%20%2B%20JS-Site-123d72?style=for-the-badge&logo=html5&logoColor=f8f4ec" alt="HTML, CSS e JS" />
+A página inicial apresenta cinco capítulos em sequência vertical. Ao clicar em **“Entrar na era”**, o visitante acessa a página da plataforma escolhida:
 
-</div>
+| Capítulo | Plataforma | Tema |
+| --- | --- | --- |
+| 01 | PlayStation 2 | Onde tudo começou |
+| 02 | PlayStation 3 | Uma nova geração |
+| 03 | PlayStation 4 | Histórias que cresceram |
+| 04 | PlayStation 5 | O próximo nível |
+| 05 | PC | Um universo sem limites |
 
-<div align="center">
-  <img src=".docs/.assets/camara-maturacao.png" alt="Protótipo do sensor de temperatura e umidade em uma caverna de maturação de queijos azuis" width="800" />
-</div>
+Cada plataforma tem uma identidade visual própria, enquanto os componentes de navegação e os cards mantêm um padrão de uso.
 
-## 🧀 Sobre o projeto
+## ✨ Funcionalidades atuais
 
-Este projeto tem como objetivo monitorar a umidade e a temperatura de queijos azuis durante o processo de maturação em ambientes controlados. A solução combina hardware (arduino e sensores) e software (APIs, banco de dados e site institucional) para acompanhar essas condições em tempo real.
+- **Home com capítulos verticais:** navegação entre PS2, PS3, PS4, PS5 e PC.
+- **Páginas individuais:** apresentação e galeria de jogos em cada plataforma.
+- **Cards de jogos:** imagem, nome, gênero, descrição e memória pessoal.
+- **Memórias expansíveis:** botão para mostrar ou esconder uma lembrança.
+- **Busca em tempo real:** filtro de jogos por nome ou gênero dentro de cada plataforma.
+- **Contador automático:** informa quantos cards correspondem à busca.
+- **Identidade visual por plataforma:** cores e atmosfera próprias, com CSS separado.
+- **Layout responsivo:** adaptação para diferentes tamanhos de tela.
 
-O projeto nasceu com **3 objetivos**:
+> **Estado atual:** o front-end funciona com conteúdo escrito diretamente nos arquivos HTML. A API, o banco de dados e a dashboard fazem parte das próximas etapas e **ainda não estão implementados**.
 
-| | Objetivo | Descrição |
-|:---:|---|---|
-| ↯ | **Monitoramento em tempo real** | Acompanhar cada câmara ao vivo e receber alertas antes que qualquer variável saia da faixa ideal. |
-| ♨ | **Acompanhamento de temperatura** | Checar a temperatura durante o processo evitando a degradação ou o endurecimento do queijo. |
-| ◉ | **Acompanhamento da umidade** | Visualizar a umidade relativa ao longo do tempo e evitar ressecamento ou excesso de mofo. |
+## 🛠️ Tecnologias utilizadas
 
-## ⚙️ Diagramas de negócio e de solução técnica
+- **HTML5:** estrutura semântica e conteúdo das páginas.
+- **CSS3:** estilos, responsividade e temas das plataformas.
+- **JavaScript:** interatividade dos cards, busca, contagem e imagens de reserva.
 
-<div align="center">
-  <img src=".docs/.assets/diagrama-de-negocios.png" alt="Diagrama de negócios da Blue Cheese Solutions" width="800" />
-</div>
+Nesta etapa, o projeto não depende de frameworks, instalação de pacotes ou servidor back-end.
 
-<div align="center">
-  <img src=".docs/.assets/Diagrama_de_solucao_tecnica.png" alt="Diagrama de solução técnica da Blue Cheese Solutions" width="800" />
-</div>
+## 📁 Estrutura do projeto
 
-## 🔗 Links
+```text
+memorycard/
+├── index.html                 # Página inicial e os cinco capítulos
+├── paginas/
+│   ├── ps2.html               # Jogos e memórias do PlayStation 2
+│   ├── ps3.html               # Modelo do PlayStation 3
+│   ├── ps4.html               # Modelo do PlayStation 4
+│   ├── ps5.html               # Modelo do PlayStation 5
+│   └── pc.html                # Modelo do PC
+├── css/
+│   ├── style.css              # Estilos gerais e da Home
+│   ├── plataformas.css        # Componentes comuns das páginas
+│   ├── ps2.css                # Tema do PS2
+│   ├── ps3.css                # Tema do PS3
+│   ├── ps4.css                # Tema do PS4
+│   ├── ps5.css                # Tema do PS5
+│   └── pc.css                 # Tema do PC
+├── js/
+│   └── script.js              # Interações compartilhadas
+├── imagens/                   # Ilustrações e capas dos jogos
+├── LEIA-ME.txt                # Instruções rápidas da versão inicial
+└── README.md                  # Documentação do projeto
+```
 
-| Documento | Link |
-|---|---|
-| Backlog | [Excel](https://bandteccom-my.sharepoint.com/:x:/g/personal/igor_pereira_sptech_school/IQCYeAtm0fkGRqVhzG7jpZtQAcOZTMoEFPwweehO5mv2s1w?e=xhvkvV) |
-| Planilha de Riscos | [Excel](https://bandteccom-my.sharepoint.com/:x:/g/personal/guilherme_rosa_sptech_school/cQpYv3Ri_dnSQKLpHYityW9_EgUB3_q3NjNdunA85xzND84qSw) |
-| Documentação | [Word](https://bandteccom-my.sharepoint.com/:w:/g/personal/igor_pereira_sptech_school/IQCqt9FMeYdbRJukiGQAj8gjAfKs-cL8G7m08feIw0PGads?e=Yv3O12) |
-| Protótipo do Site Institucional | [Figma](https://www.figma.com/design/x1H7kIV6jTcIsrpbcfmXkY/Prot%C3%B3tipo-Site-Institucional?t=VjGqwV4s5uzStGkh-1) |
-| Gerenciador de Tarefas | [Trello](https://trello.com/b/UveA5rzU/1s-blue-cheese-solutions) |
-| Slide de Apresentação | [Canva](https://canva.link/slide-bluecheese) |
-| Arduino | [Tinkercad](https://www.tinkercad.com/things/8F3M1LrF4G5-1s-blue-cheese-solutions?sharecode=fDw5O4h4axVky3vQgS56hJP7YLyChheD-giTP9izQ8A) |
+## 🚀 Como executar
 
-## 👥 Equipe
+1. Baixe ou clone os arquivos do projeto.
+2. Abra a pasta `memorycard` no **Visual Studio Code** ou em outro editor.
+3. Abra `index.html` no navegador. Se preferir, use a extensão **Live Server** do VS Code.
+4. Na Home, escolha um capítulo e clique em **“Entrar na era”**.
 
-| Nome | E-mail |
-|---|---|
-| Gregory Casarini | gregory.casarini@sptech.school |
-| Guilherme Rosa | guilherme.rosa@sptech.school |
-| Igor Pereira | igor.pereira@sptech.school |
-| Kauã Aguas | kaua.aguas@sptech.school |
-| Luann Mariano | luann.mariano@sptech.school |
-| Matheus Santos | matheus.dsantos@sptech.school |
+**Não é necessário instalar Node.js ou configurar um banco de dados para executar esta versão.**
 
-<div align="center">
+## 📝 Como adicionar um jogo
 
-<br />
+1. Abra a página desejada, por exemplo, `paginas/ps3.html`.
+2. Localize a seção `<div class="grade-jogos">`.
+3. Copie um bloco completo `<article class="cartao-jogo"> ... </article>` e cole dentro dessa grade.
+4. Substitua a capa, o gênero, o nome, o resumo e sua memória.
+5. Salve o arquivo e atualize o navegador.
 
-*Precisão que se sente no sabor.*
+Modelo de card:
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:123d72,100:0f325f&height=110&section=footer" alt="" width="100%" />
+```html
+<article class="cartao-jogo">
+  <img
+    class="imagem-jogo"
+    src="../imagens/meu-jogo.jpg"
+    alt="Capa do meu jogo"
+    loading="lazy"
+  >
 
-</div>
+  <div class="conteudo-jogo">
+    <span class="genero">Aventura</span>
+    <h3>Nome do jogo</h3>
+    <p class="resumo">Uma descrição curta sobre o jogo.</p>
+
+    <button class="botao-memoria" type="button" aria-expanded="false">
+      Ler minha memória +
+    </button>
+    <p class="memoria" hidden>
+      Minha lembrança especial com esse jogo.
+    </p>
+  </div>
+</article>
+```
+
+A imagem `meu-jogo.jpg` deve estar na pasta `imagens/`. Como as páginas dos consoles estão dentro de `paginas/`, o caminho utiliza `../imagens/`.
+
+A busca, a contagem e o botão de memória continuam funcionando ao adicionar cards com essas classes. **Não é necessário alterar o `script.js` a cada novo jogo.**
+
+### Personalizando uma plataforma
+
+Os estilos compartilhados estão em `css/plataformas.css`, enquanto as cores e os detalhes de cada geração ficam nos arquivos `css/ps2.css`, `css/ps3.css`, `css/ps4.css`, `css/ps5.css` e `css/pc.css`.
+
+Isso permite modificar o tema do PS3, por exemplo, sem alterar o visual das demais páginas.
+
+## 💙 Sobre o projeto
+
+O MemoryCard nasceu da ideia de que videogames são mais do que entretenimento: eles também fazem parte da nossa história. Uma partida com a família, uma tarde com amigos ou um jogo que parecia impossível de terminar podem se tornar lembranças para a vida inteira.
+
+**Cada plataforma é uma era. Cada jogo é uma memória salva.**
+
+---
+
+*Projeto individual em desenvolvimento para fins de aprendizado e apresentação acadêmica.*
