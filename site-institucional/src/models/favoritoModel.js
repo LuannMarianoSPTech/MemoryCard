@@ -2,7 +2,7 @@ var database = require("../database/config");
 
 function listar(idUsuario) {
     var instrucaoSql = `
-        SELECT j.idJogo, j.titulo, j.imagem, g.nome AS genero, p.nome AS plataforma, f.dtFavoritado
+        SELECT j.idJogo, j.titulo, g.nome AS genero, p.nome AS plataforma, f.dtFavoritado
             FROM favorito f
             JOIN jogo j       ON f.fkJogo = j.idJogo
             JOIN genero g     ON j.fkGenero = g.idGenero

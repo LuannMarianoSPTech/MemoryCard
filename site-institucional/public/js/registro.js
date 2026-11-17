@@ -1,40 +1,23 @@
 function registrar() {
-    let empresa = iempresa.value;
-    let cnpj = icnpj.value;
-    let cliente = icliente.value;
-    let cpf = icpf.value;
-    let email = imail.value;
-    let celular = icelular.value;
+    let nome = inome.value.trim();
+    let email = imail.value.trim();
+    let telefone = itelefone.value.trim();
+    let senha = isenha.value;
+    let validacaoSenha = iconfirmacao.value;
     let flagError = false;
 
-    if (empresa.trim() == '') {
-        div_result_empresa.innerHTML = `Informe o nome da empresa`;
+    // VALIDAÇÃO DO NOME COMPLETO (nome e sobrenome)
+    if (nome == '') {
+        div_result_nome.innerHTML = `Informe o seu nome completo`;
+        flagError = true;
+    } else if (nome.split(' ').filter(parte => parte != '').length < 2) {
+        div_result_nome.innerHTML = `Informe nome e sobrenome`;
         flagError = true;
     } else {
-        div_result_empresa.innerHTML = ``;
+        div_result_nome.innerHTML = ``;
     }
 
-    if (cnpj.length != 14 || cnpj.includes("-") || cnpj.includes(".")) {
-        div_result_cnpj.innerHTML = `CNPJ deve ter 14 números`;
-        flagError = true;
-    } else {
-        div_result_cnpj.innerHTML = ``;
-    }
-
-    if (cliente.trim() == '') {
-        div_result_cliente.innerHTML = `Informe o seu nome`;
-        flagError = true;
-    } else {
-        div_result_cliente.innerHTML = ``;
-    }
-
-    if (cpf.length != 11 || cpf.includes("-") || cpf.includes(".")) {
-        div_result_cpf.innerHTML = `CPF deve ter 11 números`;
-        flagError = true;
-    } else {
-        div_result_cpf.innerHTML = ``;
-    }
-
+    // VALIDAÇÃO DO E-MAIL
     if (email.includes('@') && email.includes('.com')) {
         div_result_mail.innerHTML = ``;
     } else {
@@ -42,29 +25,33 @@ function registrar() {
         flagError = true;
     }
 
-    if (celular.length != 11) {
-        div_result_celular.innerHTML = `Celular deve ter DDD + 9 números`;
+    // VALIDAÇÃO DO TELEFONE (DDD + 9 números, somente dígitos)
+    let somenteNumeros = true;
+    for (let i = 0; i < telefone.length; i++) {
+        if (!'0123456789'.includes(telefone[i])) {
+            somenteNumeros = false;
+        }
+    }
+
+    if (telefone.length != 11 || !somenteNumeros) {
+        div_result_telefone.innerHTML = `Use DDD + 9 números, sem espaços`;
         flagError = true;
     } else {
-        div_result_celular.innerHTML = ``;
+        div_result_telefone.innerHTML = ``;
     }
 
     // VALIDAÇÃO DA SENHA
-    let senha = isenha.value;
     let tamanhoSenha = senha.length;
-    let temMaiuscula = senha !== senha.toUpperCase();
-    let temMinuscula = senha !== senha.toLowerCase();
-    let validacaoSenha = iconfirmacao.value;
+    let temMaiuscula = senha !== senha.toLowerCase();
+    let temMinuscula = senha !== senha.toUpperCase();
 
-    let contador = 0;
     let contSimbolos = 0;
     let simbolos = '!@#$%&*()_+-=[]{};:,.<>?/|~';
 
-    while (contador < senha.length) {
-        if (simbolos.includes(senha[contador])) {
+    for (let i = 0; i < senha.length; i++) {
+        if (simbolos.includes(senha[i])) {
             contSimbolos++;
         }
-        contador++;
     }
 
     if (tamanhoSenha == 0) {
@@ -124,26 +111,17 @@ function verSenha2() {
     }
 }
 
-// Array para armazenar empresas cadastradas para validação de código de ativação
-let listaEmpresasCadastradas = [];
-
 function cadastrar() {
-    var nomeFantasiaVar = iempresa.value;
-    var numeroCelular = icelular.value;
-    var cnpjVar = icnpj.value;
-    var nomeVar = icliente.value;
-    var emailVar = imail.value;
-    var cpfVar = icpf.value;
+    var nomeVar = inome.value.trim();
+    var emailVar = imail.value.trim();
+    var telefoneVar = itelefone.value.trim();
     var senhaVar = isenha.value;
     var confirmacaoSenhaVar = iconfirmacao.value;
 
     if (
-        nomeFantasiaVar == "" ||
-        numeroCelular == "" ||
-        cnpjVar == "" ||
         nomeVar == "" ||
         emailVar == "" ||
-        cpfVar == "" ||
+        telefoneVar == "" ||
         senhaVar == "" ||
         confirmacaoSenhaVar == ""
     ) {
@@ -157,13 +135,10 @@ function cadastrar() {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            nomeFantasiaServer: nomeFantasiaVar,
-            numeroCelularServer: numeroCelular,
-            cnpjServer: cnpjVar,
             nomeServer: nomeVar,
             emailServer: emailVar,
-            senhaServer: senhaVar,
-            cpfServer: cpfVar
+            telefoneServer: telefoneVar,
+            senhaServer: senhaVar
         }),
     })
     .then(function (resposta) {
@@ -171,8 +146,10 @@ function cadastrar() {
 
         if (resposta.ok) {
             setTimeout(() => {
-                window.location = "../login.html";
+                window.location = "login.html";
             }, 1000);
+        } else if (resposta.status == 409) {
+            mostrarPopup("Já existe uma conta cadastrada com este e-mail.");
         } else {
             throw new Error("Houve um erro ao tentar realizar o cadastro!");
         }

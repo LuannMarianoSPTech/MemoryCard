@@ -43,12 +43,13 @@ function entrar() {
             resposta.json().then(json => {
                 console.log(json);
                 console.log(JSON.stringify(json));
+                sessionStorage.ID_USUARIO = json.id;
                 sessionStorage.EMAIL_USUARIO = json.email;
-                sessionStorage.NOME_CLIENTE = json.nome;
-                sessionStorage.FK_CLIENTE = json.fkCliente;
+                sessionStorage.NOME_USUARIO = json.nome;
+                sessionStorage.TELEFONE_USUARIO = json.telefone;
 
                 setTimeout(function () {
-                    window.location = "./dashboard-geral.html";
+                    window.location = "./dashboard.html";
                 }, 1000); // apenas para exibir o loading
 
             });
