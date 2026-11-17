@@ -1,3 +1,11 @@
+// Imagem de reserva: se a capa de um jogo não for encontrada, mostra um controle genérico
+document.querySelectorAll(".imagem-jogo").forEach(function (imagem) {
+  imagem.addEventListener("error", function () {
+    if (!imagem.src.includes("capa-reserva.svg")) imagem.src = "./assets/capa-reserva.svg";
+  });
+  if (imagem.complete && imagem.naturalWidth === 0) imagem.src = "./assets/capa-reserva.svg";
+});
+
 const botoesMemoria = document.querySelectorAll(".botao-memoria");
 botoesMemoria.forEach(function (botao) {
   botao.addEventListener("click", function () {
