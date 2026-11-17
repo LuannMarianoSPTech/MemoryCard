@@ -1,6 +1,5 @@
 var database = require("../database/config");
 
-// Lista os jogos favoritos do usuário (com plataforma e gênero)
 function listar(idUsuario) {
     var instrucaoSql = `
         SELECT j.idJogo, j.titulo, j.imagem, g.nome AS genero, p.nome AS plataforma, f.dtFavoritado

@@ -1,4 +1,3 @@
-/*  DASHBOARD  */
 .pagina-dashboard {
   min-height: 100vh;
   background:
@@ -25,14 +24,12 @@
 .dash-topo h1 { margin: 0; font-size: clamp(36px, 5vw, 58px); letter-spacing: -.045em; }
 .dash-topo .descricao { margin-bottom: 34px; }
 
-/* Indicadores */
 .dash-kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-bottom: 22px; }
 .kpi { padding: 22px 24px; border: 1px solid var(--borda); border-radius: 16px; background: #111b30; }
 .kpi-rotulo { display: block; color: var(--texto-suave); font-size: 13px; }
 .kpi-valor { display: block; margin-top: 8px; font-size: 42px; line-height: 1.1; letter-spacing: -.03em; }
 .kpi-texto { font-size: 24px; }
 
-/* Painéis dos gráficos */
 .dash-graficos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
 .painel { min-width: 0; padding: 24px; border: 1px solid var(--borda); border-radius: 16px; background: #111b30; }
 .painel-cabecalho h2 { margin: 0; font-size: 20px; }
@@ -46,12 +43,10 @@
 .tabela-dados th, .tabela-dados td { padding: 7px 4px; border-bottom: 1px solid var(--borda); text-align: left; }
 .tabela-dados td:last-child, .tabela-dados th:last-child { text-align: right; font-variant-numeric: tabular-nums; }
 
-/* Estado vazio */
 .dash-vazio { padding: 46px 30px; border: 1px dashed var(--borda); border-radius: 16px; text-align: center; }
 .dash-vazio h2 { margin: 0 0 8px; }
 .dash-vazio p { margin: 0 0 24px; color: var(--texto-suave); }
 
-/* Lista dos favoritos */
 .dash-lista { margin-top: 46px; }
 .dash-lista h2 { margin: 0 0 18px; font-size: clamp(24px, 3vw, 32px); letter-spacing: -.03em; }
 .lista-favoritos { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 16px; }
