@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dashboard MemoryCard: seus jogos favoritos por plataforma e gênero.">
+  <title>Dashboard | MemoryCard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script>
+    if (!sessionStorage.ID_USUARIO) {
+      window.location = "login.html";
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+  <script src="js/dashboard.js" defer></script>
+</head>
+<body class="pagina-dashboard">
+  <header class="cabecalho">
+    <a href="index.html" class="marca" aria-label="MemoryCard, página inicial">MEMORY<span>CARD</span><span class="marca-ponto">.</span></a>
+    <nav aria-label="Navegação principal">
+      <a href="index.html#capitulos">Capítulos</a>
+      <span class="usuario-logado">Olá, <strong id="nome-usuario">player</strong></span>
+      <button type="button" class="botao-sair" onclick="sair()">Sair</button>
+    </nav>
+  </header>
+
+  <main class="largura-conteudo dash">
+    <section class="dash-topo" aria-labelledby="titulo-dashboard">
+      <p class="etiqueta">SAVE DATA / DASHBOARD</p>
+      <h1 id="titulo-dashboard">Seus jogos favoritos</h1>
+      <p class="descricao">Tudo o que você marcou com ⭐ nos capítulos, organizado por plataforma e por gênero.</p>
+    </section>
+
+    <section class="dash-kpis" aria-label="Resumo dos favoritos">
+      <div class="kpi">
+        <span class="kpi-rotulo">Jogos favoritados</span>
+        <strong class="kpi-valor" id="kpi-total">–</strong>
+      </div>
+      <div class="kpi">
+        <span class="kpi-rotulo">Plataforma com mais favoritos</span>
+        <strong class="kpi-valor kpi-texto" id="kpi-plataforma">–</strong>
+      </div>
+      <div class="kpi">
+        <span class="kpi-rotulo">Gênero mais jogado</span>
+        <strong class="kpi-valor kpi-texto" id="kpi-genero">–</strong>
+      </div>
+    </section>
+
+    <section class="dash-vazio" id="dash-vazio" hidden>
+      <h2>Nenhum jogo favoritado ainda</h2>
+      <p>Entre em um capítulo e clique na estrela ☆ dos jogos que marcaram sua vida.</p>
+      <a class="botao-principal" href="index.html#capitulos">Escolher um capítulo</a>
+    </section>
+
+    <section class="dash-graficos" id="dash-graficos" aria-label="Gráficos">
+      <article class="painel">
+        <header class="painel-cabecalho">
+          <h2>Favoritos por plataforma</h2>
+          <p>Em qual geração estão os jogos que você mais gosta</p>
+        </header>
+        <div class="area-grafico">
+          <canvas id="grafico-plataformas" role="img" aria-label="Gráfico de barras: quantidade de jogos favoritos por plataforma"></canvas>
+        </div>
+        <details class="tabela-dados">
+          <summary>Ver dados em tabela</summary>
+          <table>
+            <thead><tr><th scope="col">Plataforma</th><th scope="col">Favoritos</th></tr></thead>
+            <tbody id="tabela-plataformas"></tbody>
+          </table>
+        </details>
+      </article>
+
+      <article class="painel">
+        <header class="painel-cabecalho">
+          <h2>Gêneros mais jogados</h2>
+          <p>Ranking dos gêneros entre os seus favoritos</p>
+        </header>
+        <div class="area-grafico">
+          <canvas id="grafico-generos" role="img" aria-label="Gráfico de barras horizontais: ranking de gêneros entre os jogos favoritos"></canvas>
+        </div>
+        <details class="tabela-dados">
+          <summary>Ver dados em tabela</summary>
+          <table>
+            <thead><tr><th scope="col">Gênero</th><th scope="col">Favoritos</th></tr></thead>
+            <tbody id="tabela-generos"></tbody>
+          </table>
+        </details>
+      </article>
+    </section>
+
+    <section class="dash-lista" id="dash-lista" aria-labelledby="titulo-lista">
+      <h2 id="titulo-lista">Sua coleção de favoritos</h2>
+      <div class="lista-favoritos" id="lista-favoritos"></div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>MemoryCard <span class="ponto">●</span> Um projeto sobre jogos e memórias.</p>
+    <a href="index.html#capitulos">Voltar aos capítulos ↑</a>
+  </footer>
+</body>
+</html>
