@@ -1,3 +1,5 @@
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f325f,100:123d72&height=120&section=header" alt="" width="100%" />
+
 # 🎮 MemoryCard
 
 **A vida passa. Os jogos ficam.**
@@ -48,3 +50,5 @@ O MemoryCard nasceu da ideia de que videogames são mais do que entretenimento: 
 ---
 
 *Projeto individual em desenvolvimento para fins de aprendizado e apresentação acadêmica.*
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:123d72,100:0f325f&height=110&section=footer" alt="" width="100%" />
