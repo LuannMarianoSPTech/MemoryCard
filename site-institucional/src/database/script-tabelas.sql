@@ -1,70 +1,125 @@
--- Arquivo de apoio, caso você queira criar tabelas como as aqui criadas para a API funcionar.
--- Você precisa executar os comandos no banco de dados para criar as tabelas,
--- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
+-- GRANT ALL PRIVILEGES ON memorycard.* TO 'user_dataViz'@'localhost';
+-- FLUSH PRIVILEGES;
 
-/*
-comandos para mysql server
-*/
-
-CREATE DATABASE aquatech;
-
-USE aquatech;
-
-CREATE TABLE empresa (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	razao_social VARCHAR(50),
-	cnpj CHAR(14),
-	codigo_ativacao VARCHAR(50)
-);
+DROP DATABASE IF EXISTS memorycard;
+CREATE DATABASE memorycard;
+USE memorycard;
 
 CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+    idUsuario   INT PRIMARY KEY AUTO_INCREMENT,
+    nome        VARCHAR(100) NOT NULL,
+    email       VARCHAR(100) NOT NULL UNIQUE,
+    telefone    CHAR(11)     NOT NULL,
+    senha       VARCHAR(30)  NOT NULL,
+    dtCadastro  DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+CREATE TABLE plataforma (
+    idPlataforma   INT PRIMARY KEY AUTO_INCREMENT,
+    nome           VARCHAR(30)  NOT NULL UNIQUE,
+    capitulo       TINYINT      NOT NULL,
+    tema           VARCHAR(60),
+    anoLancamento  YEAR
 );
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+CREATE TABLE genero (
+    idGenero  INT PRIMARY KEY AUTO_INCREMENT,
+    nome      VARCHAR(40) NOT NULL UNIQUE
 );
 
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
-
-create table medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	temperatura DECIMAL,
-	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
+CREATE TABLE jogo (
+    idJogo        INT PRIMARY KEY AUTO_INCREMENT,
+    titulo        VARCHAR(100) NOT NULL,
+    fkPlataforma  INT NOT NULL,
+    fkGenero      INT NOT NULL,
+    CONSTRAINT fkJogoPlataforma FOREIGN KEY (fkPlataforma) REFERENCES plataforma(idPlataforma),
+    CONSTRAINT fkJogoGenero     FOREIGN KEY (fkGenero)     REFERENCES genero(idGenero)
 );
 
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 1', 'ED145B');
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 2', 'A1B2C3');
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 3', 'E1B2C3');
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 4', 'E1B2C6');
-insert into aquario (descricao, fk_empresa) values ('Aquário de Estrela-do-mar', 1);
-insert into aquario (descricao, fk_empresa) values ('Aquário de Peixe-dourado', 2);
-insert into aquario (descricao, fk_empresa) values ('Aquário de Baiacu', 3);
-insert into aquario (descricao, fk_empresa) values ('Aquário de Carpa', 4);
+CREATE TABLE favorito (
+    fkUsuario     INT NOT NULL,
+    fkJogo        INT NOT NULL,
+    dtFavoritado  DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (fkUsuario, fkJogo),
+    CONSTRAINT fkFavoritoUsuario FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario) ON DELETE CASCADE,
+    CONSTRAINT fkFavoritoJogo    FOREIGN KEY (fkJogo)    REFERENCES jogo(idJogo)       ON DELETE CASCADE
+);
 
-select * from usuario;
+INSERT INTO plataforma (nome, capitulo, tema, anoLancamento) VALUES
+    ('PlayStation 2', 1, 'Onde tudo começou',       2000),
+    ('PlayStation 3', 2, 'Uma nova geração',        2006),
+    ('PlayStation 4', 3, 'Histórias que cresceram', 2013),
+    ('PlayStation 5', 4, 'O próximo nível',         2020),
+    ('PC',            5, 'Um universo sem limites', NULL);
 
+INSERT INTO genero (nome) VALUES
+    ('Ação e Aventura'),
+    ('Mundo Aberto'),
+    ('Esportes'),
+    ('Tiro'),
+    ('Luta'),
+    ('Corrida'),
+    ('Terror');
 
-alter table usuario add column CPF CHAR(11);
+INSERT INTO jogo (titulo, fkPlataforma, fkGenero) VALUES
+    -- PS2
+    ('God of War I e II', 1, 1),
+    ('The Warriors', 1, 5), 
+    ('Need for Speed: Underground 2', 1, 6),  
+    ('Tony Hawk''s', 1, 3),                    
+    ('Resident Evil 4', 1, 7),                
+    ('Spider-Man 3', 1, 2),                    
+    ('GTA: San Andreas', 1, 2),               
+    -- PS3
+    ('Skate 3', 2, 3),                        
+    ('Army of Two', 2, 4),                     
+    ('GTA IV', 2, 2),                         
+    ('GTA V', 2, 2),                          
+    ('Assassin''s Creed III', 2, 2),           
+    ('God of War III', 2, 1),                
+    -- PS4
+    ('Fortnite', 3, 4),                        
+    ('Rocket League', 3, 3),                   
+    ('Spider-Man', 3, 2),                     
+    ('Call Of Duty - Black Ops 3', 3, 4),     
+    -- PS5
+    ('GTA VI', 4, 2),                         
+    -- PC
+    ('Valorant', 5, 4),                     
+    ('Peak', 5, 1),                            
+    ('Pratfall', 5, 1),                       
+    ('CS:GO', 5, 4),                         
+    ('Combat Arms', 5, 4);               
 
-alter table usuario rename column CPF to cpf;
+INSERT INTO usuario (nome, email, telefone, senha) VALUES
+    ('Usuário Teste', 'teste@memorycard.com', '11999999999', 'Teste@123');
 
+INSERT INTO favorito (fkUsuario, fkJogo) VALUES
+    (1, 1), (1, 2), (1, 6), (1, 7),
+    (1, 8), (1, 10), (1, 11), (1, 13),
+    (1, 14), (1, 15);
+
+SELECT u.nome AS usuario, j.titulo, g.nome AS genero, p.nome AS plataforma
+    FROM favorito f
+    JOIN usuario u    ON f.fkUsuario = u.idUsuario
+    JOIN jogo j       ON f.fkJogo = j.idJogo
+    JOIN genero g     ON j.fkGenero = g.idGenero
+    JOIN plataforma p ON j.fkPlataforma = p.idPlataforma
+    WHERE u.idUsuario = 1;
+
+-- Gráfico 1: favoritos por plataforma
+SELECT p.nome AS plataforma, COUNT(f.fkJogo) AS total
+    FROM plataforma p
+    LEFT JOIN jogo j     ON j.fkPlataforma = p.idPlataforma
+    LEFT JOIN favorito f ON f.fkJogo = j.idJogo AND f.fkUsuario = 1
+    GROUP BY p.idPlataforma, p.nome, p.capitulo
+    ORDER BY p.capitulo;
+
+-- Gráfico 2: gêneros mais jogados (entre os favoritos)
+SELECT g.nome AS genero, COUNT(f.fkJogo) AS total
+    FROM favorito f
+    JOIN jogo j   ON f.fkJogo = j.idJogo
+    JOIN genero g ON j.fkGenero = g.idGenero
+    WHERE f.fkUsuario = 1
+    GROUP BY g.idGenero, g.nome
+    ORDER BY total DESC, g.nome;
