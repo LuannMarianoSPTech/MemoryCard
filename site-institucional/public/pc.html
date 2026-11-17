@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MemoryCard: minhas memórias da plataforma PC.">
+  <title>MemoryCard | PC</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/plataformas.css">
+  <link rel="stylesheet" href="./css/pc.css">
+  <script src="./js/script.js" defer></script>
+  <script src="./js/favoritos.js" defer></script>
+</head>
+<body class="pagina-console pagina-pc" id="topo">
+  <header class="cabecalho">
+    <a href="./index.html" class="marca" aria-label="MemoryCard, página inicial">MEMORY<span>CARD</span><span class="marca-ponto">.</span></a>
+    <nav aria-label="Navegação da página">
+      <a href="./index.html#capitulos">← Voltar aos capítulos</a>
+      <a href="#jogos">Meus jogos</a>
+      <a href="dashboard.html">Minha dashboard</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="apresentacao largura-conteudo" aria-labelledby="titulo-plataforma">
+      <div class="conteudo-apresentacao">
+        <p class="etiqueta">CAPÍTULO 05 / PC</p>
+        <h1 id="titulo-plataforma">Um universo sem limites<span>PC</span></h1>
+        <p class="descricao">O computador atravessa gerações e abre espaço para todo tipo de jogo. Aqui ficam as partidas competitivas, as aventuras com os amigos e as descobertas que fiz no PC.</p>
+        <a class="botao-principal" href="#jogos">Explorar meus jogos ↓</a>
+      </div>
+      <div class="envoltorio-console">
+        <img class="imagem-console" src="./assets/PC Gamer RGB com Vidro Temperado.png" alt="Ilustração estilizada de um PC gamer">
+      </div>
+    </section>
+
+    <section class="secao-jogos" id="jogos" aria-labelledby="titulo-jogos">
+      <div class="largura-conteudo">
+        <p class="etiqueta">ARQUIVO DE MEMÓRIAS / PC</p>
+        <div class="titulo-galeria">
+          <div>
+            <h2 id="titulo-jogos">Jogos que marcaram essa fase</h2>
+            <p class="texto-apoio">Do tiro competitivo às aventuras em grupo com os amigos.</p>
+          </div>
+          <span class="contador-jogos" aria-live="polite">Jogos cadastrados: <strong id="total-jogos">0</strong></span>
+        </div>
+        <label class="rotulo-busca" for="busca-jogo">Buscar um jogo nessa plataforma</label>
+        <input class="busca-jogo" id="busca-jogo" type="search" placeholder="Digite o nome ou gênero do jogo..." autocomplete="off">
+        <div class="grade-jogos">
+        <article class="cartao-jogo" data-id-jogo="19">
+          <button class="botao-favoritar" type="button" aria-pressed="false" aria-label="Favoritar Valorant" title="Favoritar">☆</button>
+          <img class="imagem-jogo" loading="lazy" src="./assets/valorant.jpg" alt="Arte ilustrativa de Valorant">
+          <div class="conteudo-jogo">
+            <span class="genero">Tiro</span>
+            <h3>Valorant</h3>
+            <p class="resumo">Jogo de tiro tático 5x5 em que cada agente tem habilidades próprias.</p>
+            <button class="botao-memoria" type="button" aria-expanded="false">Ler minha memória +</button>
+            <p class="memoria" hidden>✏️ Escreva aqui a sua memória com Valorant.</p>
+          </div>
+        </article>
+        <article class="cartao-jogo" data-id-jogo="20">
+          <button class="botao-favoritar" type="button" aria-pressed="false" aria-label="Favoritar Peak" title="Favoritar">☆</button>
+          <img class="imagem-jogo" loading="lazy" src="./assets/peak.jpg" alt="Arte ilustrativa de Peak">
+          <div class="conteudo-jogo">
+            <span class="genero">Ação e Aventura</span>
+            <h3>Peak</h3>
+            <p class="resumo">Aventura cooperativa em que um grupo de amigos precisa escalar uma montanha e chegar ao topo vivo.</p>
+            <button class="botao-memoria" type="button" aria-expanded="false">Ler minha memória +</button>
+            <p class="memoria" hidden>✏️ Escreva aqui a sua memória com Peak.</p>
+          </div>
+        </article>
+        <article class="cartao-jogo" data-id-jogo="21">
+          <button class="botao-favoritar" type="button" aria-pressed="false" aria-label="Favoritar Pratfall" title="Favoritar">☆</button>
+          <img class="imagem-jogo" loading="lazy" src="./assets/pratfall.jpg" alt="Arte ilustrativa de Pratfall">
+          <div class="conteudo-jogo">
+            <span class="genero">Ação e Aventura</span>
+            <h3>Pratfall</h3>
+            <p class="resumo">Aventura cooperativa com física maluca: cavar, explodir e descer cavernas para resgatar o seu cachorro.</p>
+            <button class="botao-memoria" type="button" aria-expanded="false">Ler minha memória +</button>
+            <p class="memoria" hidden>✏️ Escreva aqui a sua memória com Pratfall.</p>
+          </div>
+        </article>
+        <article class="cartao-jogo" data-id-jogo="22">
+          <button class="botao-favoritar" type="button" aria-pressed="false" aria-label="Favoritar CS:GO" title="Favoritar">☆</button>
+          <img class="imagem-jogo" loading="lazy" src="./assets/csgo.jpg" alt="Arte ilustrativa de CS:GO">
+          <div class="conteudo-jogo">
+            <span class="genero">Tiro</span>
+            <h3>CS:GO</h3>
+            <p class="resumo">Clássico do tiro tático competitivo: terroristas contra contraterroristas, rodada a rodada.</p>
+            <button class="botao-memoria" type="button" aria-expanded="false">Ler minha memória +</button>
+            <p class="memoria" hidden>✏️ Escreva aqui a sua memória com CS:GO.</p>
+          </div>
+        </article>
+        <article class="cartao-jogo" data-id-jogo="23">
+          <button class="botao-favoritar" type="button" aria-pressed="false" aria-label="Favoritar Combat Arms" title="Favoritar">☆</button>
+          <img class="imagem-jogo" loading="lazy" src="./assets/combatarms.jpg" alt="Arte ilustrativa de Combat Arms">
+          <div class="conteudo-jogo">
+            <span class="genero">Tiro</span>
+            <h3>Combat Arms</h3>
+            <p class="resumo">Jogo de tiro online gratuito com vários modos de partida e armas personalizáveis.</p>
+            <button class="botao-memoria" type="button" aria-expanded="false">Ler minha memória +</button>
+            <p class="memoria" hidden>✏️ Escreva aqui a sua memória com Combat Arms.</p>
+          </div>
+        </article>
+        </div>
+        <p class="sem-resultados" id="sem-resultados" hidden>Nenhum jogo encontrado. Tente outra busca.</p>
+      </div>
+    </section>
+
+    <section class="fim-capitulo largura-conteudo">
+      <p class="etiqueta">FIM DO CAPÍTULO 05</p>
+      <h2>Quer revisitar outra época?</h2>
+      <a class="botao-voltar" href="./index.html#capitulos">← Voltar à seleção de capítulos</a>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>MemoryCard <span class="ponto">●</span> Um projeto sobre jogos e memórias.</p>
+    <a href="./index.html#capitulos">Voltar aos capítulos ↑</a>
+  </footer>
+</body>
+</html>

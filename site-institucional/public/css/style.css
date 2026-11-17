@@ -84,6 +84,7 @@ input {
 
 .cabecalho nav {
   display: flex;
+  align-items: center;
   gap: 26px;
   font-size: 14px;
   font-weight: 600;
@@ -635,4 +636,57 @@ h3 {
   .auth-formulario { padding: 38px 24px; }
   .form-registro { grid-template-columns: 1fr; }
   .form-registro .campo-auth-senha, .form-registro .botao-auth { grid-column: 1; }
+}
+
+/*  BOTÃO "ACESSAR DASHBOARD" (HEADER)  */
+.cabecalho nav a.botao-dashboard {
+  padding: 10px 16px;
+  border-radius: 9px;
+  background: var(--primaria);
+  color: #061022;
+  font-weight: 800;
+  transition: transform .2s ease, filter .2s ease;
+}
+.cabecalho nav a.botao-dashboard:hover {
+  color: #061022;
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+@media (max-width: 560px) {
+  .pagina-inicial .cabecalho { flex-direction: column; align-items: flex-start; }
+  .pagina-inicial .cabecalho nav { flex-wrap: wrap; gap: 12px 18px; }
+}
+
+/*  REGISTRO: card centralizado e cabendo na tela, sem rolagem  */
+.pagina-autenticacao:has(.auth-area-registro) { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+.pagina-autenticacao:has(.auth-area-registro) .cabecalho { padding: 20px 0; flex-shrink: 0; }
+.auth-area-registro { flex: 1; min-height: 0; padding: 0 0 28px; }
+.auth-card-registro { grid-template-columns: .85fr 1.15fr; max-width: 1040px; }
+.auth-card-registro .auth-apresentacao { min-height: 0; padding: 44px 46px; }
+.auth-card-registro .auth-apresentacao h1 { font-size: clamp(32px, 3.6vw, 48px); }
+.auth-card-registro .auth-apresentacao > p:not(.etiqueta) { margin-top: 18px; line-height: 1.65; }
+.auth-card-registro .auth-detalhe { margin-top: 36px; }
+.auth-card-registro .auth-formulario { align-self: stretch; display: flex; flex-direction: column; justify-content: center; padding: 40px 52px; }
+.auth-card-registro .auth-subtitulo { margin: 6px 0 22px; }
+.auth-card-registro .auth-alternativa { margin-top: 18px; }
+.form-registro .campo-largo { grid-column: 1 / -1; }
+.form-registro { row-gap: 10px; }
+
+/* Telas baixas (ex.: notebook 1366x768): compacta um pouco mais */
+@media (max-height: 720px) and (min-width: 851px) {
+  .auth-card-registro .auth-formulario { padding: 26px 44px; }
+  .auth-card-registro .auth-apresentacao { padding: 30px 38px; }
+  .auth-card-registro .auth-formulario h2 { font-size: 28px; }
+  .auth-card-registro .auth-subtitulo { margin-bottom: 14px; }
+  .form-registro .campo-auth input { height: 40px; }
+  .form-registro { row-gap: 6px; }
+}
+
+/* Celular / tela estreita: aí a rolagem volta, porque não cabe tudo */
+@media (max-width: 850px) {
+  .pagina-autenticacao:has(.auth-area-registro) { height: auto; overflow: visible; }
+  .auth-card-registro .auth-formulario { padding: 42px 30px; }
+}
+@media (max-width: 560px) {
+  .form-registro .campo-largo { grid-column: 1; }
 }

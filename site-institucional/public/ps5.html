@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./css/plataformas.css">
   <link rel="stylesheet" href="./css/ps5.css">
   <script src="./js/script.js" defer></script>
+  <script src="./js/favoritos.js" defer></script>
 </head>
 <body class="pagina-console pagina-ps5" id="topo">
   <header class="cabecalho">
@@ -16,6 +17,7 @@
     <nav aria-label="Navegação da página">
       <a href="./index.html#capitulos">← Voltar aos capítulos</a>
       <a href="#jogos">Meus jogos</a>
+        <a href="dashboard.html">Minha dashboard</a>
     </nav>
   </header>
 
@@ -44,10 +46,11 @@
         <label class="rotulo-busca" for="busca-jogo">Buscar um jogo nessa plataforma</label>
         <input class="busca-jogo" id="busca-jogo" type="search" placeholder="Digite o nome ou gênero do jogo..." autocomplete="off">
         <div class="grade-jogos">
-        <article class="cartao-jogo">
-          <img class="imagem-jogo" src="./assets/gta6-prevendas.webp" alt="Imagem GTA VI">
+        <article class="cartao-jogo" data-id-jogo="18">
+          <button class="botao-favoritar" type="button" aria-pressed="false" aria-label="Favoritar GTA VI" title="Favoritar">☆</button>
+<img class="imagem-jogo" src="./assets/gta6-prevendas.webp" alt="Imagem GTA VI">
           <div class="conteudo-jogo">
-            <span class="genero">Mundo Aberto - Ação e Aventura</span>
+            <span class="genero">Mundo Aberto</span>
             <h3>GTA VI</h3>
             <p class="resumo">GTA VI é o ultimo capítulo lançado da franquia Grand Theft Auto, ambientado em Vice City, com um mundo aberto inspirado na Flórida e uma história protagonizada por Lucia e Jason.</p>
             <button class="botao-memoria" type="button" aria-expanded="false">Ler minha memória +</button>
@@ -61,12 +64,12 @@
     <section class="fim-capitulo largura-conteudo">
       <p class="etiqueta">FIM DO CAPÍTULO 04</p>
       <h2>Quer revisitar outra época?</h2>
-      <a class="botao-voltar" href="../index.html#capitulos">← Voltar à seleção de capítulos</a>
+      <a class="botao-voltar" href="./index.html#capitulos">← Voltar à seleção de capítulos</a>
     </section>
   </main>
 <footer class="rodape">
   <p>MemoryCard <span class="ponto">●</span> Um projeto sobre jogos e memórias.</p>
-  <a href="../index.html#capitulos">Voltar aos capítulos ↑</a>
+  <a href="./index.html#capitulos">Voltar aos capítulos ↑</a>
 </footer>
 </body>
 </html>

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./css/plataformas.css" />
     <link rel="stylesheet" href="./css/ps2.css" />
     <script src="js/script.js" defer></script>
+    <script src="js/favoritos.js" defer></script>
   </head>
   <body class="pagina-console pagina-ps2" id="topo">
     <header class="cabecalho">
@@ -24,6 +25,7 @@
       <nav aria-label="Navegação da página">
         <a href="./index.html#capitulos">← Voltar aos capítulos</a>
         <a href="#jogos">Meus jogos</a>
+        <a href="dashboard.html">Minha dashboard</a>
       </nav>
     </header>
 
@@ -80,16 +82,17 @@
           />
 
           <div class="grade-jogos">
-            <article class="cartao-jogo">
-              <img
+            <article class="cartao-jogo" data-id-jogo="1">
+              <button class="botao-favoritar" type="button" aria-pressed="false" aria-label="Favoritar God of War I e II" title="Favoritar">☆</button>
+<img
                 alt="Arte ilustrativa de God of War"
                 class="imagem-jogo"
                 loading="lazy"
                 src="./assets/gow.jpeg"
               />
               <div class="conteudo-jogo">
-                <span class="genero">Ação e aventura</span>
-                <h3>God of War I e II ⭐</h3>
+                <span class="genero">Ação e Aventura</span>
+                <h3>God of War I e II</h3>
                 <p class="resumo">Uma jornada cheia de batalhas e mitologia.</p>
                 <button
                   aria-expanded="false"
@@ -104,8 +107,9 @@
                 </p>
               </div>
             </article>
-            <article class="cartao-jogo">
-              <img
+            <article class="cartao-jogo" data-id-jogo="2">
+              <button class="botao-favoritar" type="button" aria-pressed="false" aria-label="Favoritar The Warriors" title="Favoritar">☆</button>
+<img
                 alt="Arte ilustrativa de The Warriors"
                 class="imagem-jogo"
                 loading="lazy"
@@ -113,7 +117,7 @@
               />
               <div class="conteudo-jogo">
                 <span class="genero">Luta</span>
-                <h3>The Warriors ⭐</h3>
+                <h3>The Warriors</h3>
                 <p class="resumo">
                   Uma gangue luta para sobreviver e voltar para casa em uma Nova
                   York dominada por gangues rivais.
@@ -132,8 +136,9 @@
                 </p>
               </div>
             </article>
-            <article class="cartao-jogo">
-              <img
+            <article class="cartao-jogo" data-id-jogo="3">
+              <button class="botao-favoritar" type="button" aria-pressed="false" aria-label="Favoritar Need for Speed: Underground 2" title="Favoritar">☆</button>
+<img
                 alt="Arte ilustrativa de Need for Speed Underground 2"
                 class="imagem-jogo"
                 loading="lazy"
@@ -156,8 +161,9 @@
                 </p>
               </div>
             </article>
-            <article class="cartao-jogo">
-              <img
+            <article class="cartao-jogo" data-id-jogo="4">
+              <button class="botao-favoritar" type="button" aria-pressed="false" aria-label="Favoritar Tony Hawk's" title="Favoritar">☆</button>
+<img
                 alt="Arte ilustrativa de Tony Hawks"
                 class="imagem-jogo"
                 loading="lazy"
@@ -184,7 +190,8 @@
                 </p>
               </div>
             </article>
-            <article class="cartao-jogo">
+            <article class="cartao-jogo" data-id-jogo="5">
+<button class="botao-favoritar" type="button" aria-pressed="false" aria-label="Favoritar Resident Evil 4" title="Favoritar">☆</button>
 <img alt="Arte ilustrativa de Resident Evil 4" class="imagem-jogo" loading="lazy" src="./assets/re4.jpg"/>
 <div class="conteudo-jogo">
 <span class="genero">Terror</span>
@@ -194,22 +201,23 @@
 <p class="memoria" hidden="">Resident Evil 4 me dava tanto medo que eu mal conseguia passar da primeira fase! Mesmo morrendo de medo, sempre tentava jogar de novo.</p>
 </div>
 </article>
-</article>
-            <article class="cartao-jogo">
+            <article class="cartao-jogo" data-id-jogo="6">
+<button class="botao-favoritar" type="button" aria-pressed="false" aria-label="Favoritar Spider-Man 3" title="Favoritar">☆</button>
 <img alt="Arte ilustrativa de Spider Man" class="imagem-jogo" loading="lazy" src="./assets/spiderman.jpeg"/>
 <div class="conteudo-jogo">
-<span class="genero">Mundo Aberto - Ação e Aventura</span>
-<h3>Spider-Man 3 ⭐</h3>
+<span class="genero">Mundo Aberto</span>
+<h3>Spider-Man 3</h3>
 <p class="resumo">Jogo do super heroi Homem Aranha</p>
 <button aria-expanded="false" class="botao-memoria" type="button">Ler minha memória +</button>
 <p class="memoria" hidden="">Eu não sabia muito da historia do jogo, só queria balançar pela cidade com a teia.</p>
 </div>
 </article>
- <article class="cartao-jogo">
+ <article class="cartao-jogo" data-id-jogo="7">
+<button class="botao-favoritar" type="button" aria-pressed="false" aria-label="Favoritar GTA: San Andreas" title="Favoritar">☆</button>
 <img alt="Arte ilustrativa de GTA San Andreas" class="imagem-jogo" loading="lazy" src="./assets/gta.jpg"/>
 <div class="conteudo-jogo">
-<span class="genero">Mundo aberto</span>
-<h3>GTA: San Andreas ⭐</h3>
+<span class="genero">Mundo Aberto</span>
+<h3>GTA: San Andreas</h3>
 <p class="resumo">Liberdade para explorar uma cidade enorme.</p>
 <button aria-expanded="false" class="botao-memoria" type="button">Ler minha memória +</button>
 <p class="memoria" hidden="">GTA San Andreas foi meu primeiro jogo de mundo aberto. Adorava explorar a cidade, dirigir sem rumo e descobrir tudo o que o jogo tinha a oferecer.</p>
