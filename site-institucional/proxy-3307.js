@@ -1,8 +1,3 @@
-// Redirecionamento de porta usado pelo "npm start" (ambiente de producao).
-// O .env aponta para a porta 3307; este arquivo repassa tudo que chega
-// em 127.0.0.1:3307 para o MySQL local em 127.0.0.1:3306.
-// Assim, "npm start" e "npm run dev" usam o mesmo banco (memorycard).
-
 var net = require("net");
 
 var HOST = "127.0.0.1";

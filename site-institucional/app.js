@@ -1,6 +1,4 @@
 var caminho_env = process.env.NODE_ENV === 'dev' ? '.env.dev' : '.env';
-// Acima, temos o uso do operador ternário para definir o caminho do arquivo .env
-// A sintaxe do operador ternário é: condição ? valor_se_verdadeiro : valor_se_falso
 
 require("dotenv").config({ path: caminho_env });
 
