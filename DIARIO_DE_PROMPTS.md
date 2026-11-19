@@ -1,70 +1,42 @@
 # Diário de Prompts – MemoryCard
 
-Registro de como usei assistentes de IA no projeto individual: o que pedi, o que usei e o que mudei.
-Regra que sigo: só entra no projeto o que eu sei explicar.
+Aqui anoto como usei IA no projeto: o que pedi, o que usei e o que mudou.
 
-## Assistentes utilizados
-
-| Assistente | Para quê |
-| --- | --- |
-| Claude (Anthropic) – app Claude | Documentação, revisão do projeto contra os requisitos da Aula 09 e ajustes finais |
-| _(preencher: outros assistentes usados antes, se houver)_ | |
+**Assistente:** Claude (Anthropic). _(Se usou outro antes, coloque aqui.)_
+**Conversa:** https://claude.ai/code/session_01PYrYDPxtCXpeWAbWMhVSKf
 
 ---
 
-## Registros
+### 19/11 – Documentação
+- **Pedi:** ajuda para fazer ajustes da documentação do projeto.
+- **Usei:** o documento que saiu, como base da documentação.
+- **Mudou no código:** nada.
 
-### 19/11/2026 – Documentação do projeto
-- **Assistente:** Claude
-- **Link da conversa:** https://claude.ai/code/session_01PYrYDPxtCXpeWAbWMhVSKf
-- **O que pedi:** "gere uma documentação que não seja muitas páginas para meu projeto individual".
-- **O que a IA fez:** leu o código (rotas, controllers, models, script SQL e páginas) e escreveu um documento curto com visão geral, tecnologias, arquitetura, banco de dados, rotas da API, funcionalidades, como executar e limitações.
-- **O que eu usei / mudei:** usei o documento como base da documentação do projeto. Nenhum arquivo de código foi alterado nesta etapa.
+### 19/11 – Requisitos da Aula 09
+- **Pedi:** que conferisse o projeto com o PDF da Aula 09.
+- **Usei:** a lista do que faltava, como checklist das últimas entregas.
+- **Mudou no código:** nada.
 
-### 19/11/2026 – Revisão contra os requisitos (Aula 09)
-- **Assistente:** Claude (mesma conversa)
-- **O que pedi:** conferir se o projeto atende ao PDF "Aula 09 – Pesquisa e Inovação – Projeto Individual".
-- **O que a IA fez:** comparou cada item do PDF com o projeto e apontou o que faltava: Diário de Prompts, Trello do MemoryCard, VM Linux com o banco, cálculo matemático na dashboard, modelo lógico, apresentação e partes do documento.
-- **O que eu usei / mudei:** usei a lista como checklist das últimas entregas.
+### 19/11 – Últimos ajustes
+- **Pedi:** ajuda com os ajustes que ainda faltavam.
+- **Mudou:**
+  - porcentagem de cada plataforma e gênero na dashboard (`dashboard.js`, `dashboard.html`, `dashboard.css`);
+  - README atualizado, `.env.example` criado e `.env.dev` no `.gitignore`;
+- **Como explico:** um `for` soma os totais e outro divide cada total pela soma e multiplica por 100. Se a soma for 0, fica 0%.
 
-### 19/11/2026 – Ajustes finais
-- **Assistente:** Claude (mesma conversa)
-- **O que pedi:** "faça o que ainda precisa ser ajustado".
-- **O que mudou no projeto:**
-  - `public/js/dashboard.js`: nova função `calcularPorcentagens(dados)`, que soma os totais com um `for` e calcula a porcentagem de cada item em um vetor (`total / soma * 100`, arredondado para 1 casa). A porcentagem aparece no tooltip dos gráficos e numa nova coluna das tabelas.
-  - `public/dashboard.html`: coluna "% do total" nas duas tabelas de dados.
-  - `public/css/dashboard.css`: números das tabelas alinhados à direita.
-  - `README.md`: status atualizado (API, banco e dashboard já funcionam), tecnologias e passo a passo para executar.
-  - `.gitignore`: passa a ignorar o `.env.dev`; criado `site-institucional/.env.example` sem senha.
-  - `banco-de-dados/modelo-logico.png`: diagrama do modelo lógico gerado a partir do `script-tabelas.sql`.
-  - Trello: cartões do cronograma do MemoryCard no quadro do projeto.
-  - Documento do projeto: seção de contexto, objetivo e justificativa.
-- **Como eu explico o cálculo:** primeiro um `for` percorre o vetor que veio do banco e soma todos os totais. Depois outro `for` divide o total de cada plataforma (ou gênero) pela soma e multiplica por 100. Se a soma for 0, a porcentagem é 0, para não dividir por zero.
 
-### 19/11/2026 – Apresentação para a banca
-- **Assistente:** Claude (mesma conversa)
-- **O que pedi:** montar os slides da apresentação. Escrevi as respostas das perguntas do socioemocional (interesse pelo tema, valores, dificuldade, superação e gratidão).
-- **O que a IA fez:** organizou 14 slides com o projeto (capítulos, site, dashboard, arquitetura, banco, disciplinas, uso de IA) e as minhas respostas, com notas de fala em cada slide.
-- **O que eu usei / mudei:** _(preencher depois de revisar: o que você mudou nos slides)_
-
-### 19/11/2026 – Favoritos não apareciam na dashboard
-- **Assistente:** Claude (mesma conversa)
-- **O que pedi:** "meus favoritos não estão funcionando, não aparecem na dashboard".
-- **O que a IA fez:** rodou o projeto com um banco de teste e mostrou que o código funciona quando o banco tem os 23 jogos do script. Achou o motivo do erro silencioso: o `INSERT IGNORE` descarta o favorito sem avisar quando o jogo não existe na tabela `jogo` (erro de chave estrangeira vira só um aviso), e mesmo assim a API respondia 201.
-- **O que mudou no projeto:**
-  - `src/models/favoritoModel.js`: `INSERT IGNORE` virou `INSERT`.
-  - `src/controllers/favoritoController.js`: jogo repetido (`ER_DUP_ENTRY`) responde 200; jogo ou usuário que não existe (`ER_NO_REFERENCED_ROW_2`) responde 400 com uma mensagem clara.
-  - `public/js/favoritos.js`: o aviso na tela mostra a mensagem que a API mandou.
-- **Como eu explico:** antes, quando o banco recusava o favorito, o erro era escondido. Agora o controller confere o código do erro do MySQL e devolve uma resposta que o front mostra na tela.
+### 19/11 – Favoritos sem aparecer na dashboard
+- **Pedi:** ajuda porque os favoritos não apareciam na dashboard.
+- **Descobri:** o banco não tinha os jogos, e o `INSERT IGNORE` escondia o erro.
+- **Mudou:** `INSERT IGNORE` virou `INSERT`; o controller trata favorito repetido e jogo que não existe; o aviso na tela mostra o erro. Rodei o script do banco de novo.
+- **Como explico:** antes o erro do banco era ignorado. Agora o controller confere o código do erro do MySQL e o front mostra a mensagem.
 
 ---
 
 ## Modelo para novos registros
 
-### DD/MM/AAAA – Título
-- **Assistente:**
-- **Link da conversa (se houver):**
-- **O que pedi:**
-- **O que a IA fez:**
-- **O que eu usei / mudei:**
-- **Como eu explico:**
+### DD/MM – Título
+- **Pedi:**
+- **Usei:**
+- **Mudou:**
+- **Como explico:**
