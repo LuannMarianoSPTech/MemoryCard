@@ -1,10 +1,5 @@
 # Diário de Prompts – MemoryCard
 
-Aqui anoto como usei IA no projeto: o que pedi, o que usei e o que mudou.
-
-**Assistente:** Claude (Anthropic). _(Se usou outro antes, coloque aqui.)_
-**Conversa:** https://claude.ai/code/session_01PYrYDPxtCXpeWAbWMhVSKf
-
 ---
 
 ### 19/11 – Documentação
