@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/dashboard.css">
   <script>
-    // Protege a página: sem login, volta para o login
     if (!sessionStorage.ID_USUARIO) {
       window.location = "login.html";
     }
@@ -33,7 +32,6 @@
       <p class="descricao">Tudo o que você marcou com ⭐ nos capítulos, organizado por plataforma e por gênero.</p>
     </section>
 
-    <!-- INDICADORES -->
     <section class="dash-kpis" aria-label="Resumo dos favoritos">
       <div class="kpi">
         <span class="kpi-rotulo">Jogos favoritados</span>
@@ -49,14 +47,12 @@
       </div>
     </section>
 
-    <!-- AVISO QUANDO NÃO HÁ FAVORITOS -->
     <section class="dash-vazio" id="dash-vazio" hidden>
       <h2>Nenhum jogo favoritado ainda</h2>
       <p>Entre em um capítulo e clique na estrela ☆ dos jogos que marcaram sua vida.</p>
       <a class="botao-principal" href="index.html#capitulos">Escolher um capítulo</a>
     </section>
 
-    <!-- GRÁFICOS -->
     <section class="dash-graficos" id="dash-graficos" aria-label="Gráficos">
       <article class="painel">
         <header class="painel-cabecalho">
@@ -93,7 +89,6 @@
       </article>
     </section>
 
-    <!-- LISTA DOS FAVORITOS -->
     <section class="dash-lista" id="dash-lista" aria-labelledby="titulo-lista">
       <h2 id="titulo-lista">Sua coleção de favoritos</h2>
       <div class="lista-favoritos" id="lista-favoritos"></div>

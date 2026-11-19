@@ -6,7 +6,6 @@ function registrar() {
     let validacaoSenha = iconfirmacao.value;
     let flagError = false;
 
-    // VALIDAÇÃO DO NOME COMPLETO (nome e sobrenome)
     if (nome == '') {
         div_result_nome.innerHTML = `Informe o seu nome completo`;
         flagError = true;
@@ -17,7 +16,6 @@ function registrar() {
         div_result_nome.innerHTML = ``;
     }
 
-    // VALIDAÇÃO DO E-MAIL
     if (email.includes('@') && email.includes('.com')) {
         div_result_mail.innerHTML = ``;
     } else {
@@ -25,7 +23,6 @@ function registrar() {
         flagError = true;
     }
 
-    // VALIDAÇÃO DO TELEFONE (DDD + 9 números, somente dígitos)
     let somenteNumeros = true;
     for (let i = 0; i < telefone.length; i++) {
         if (!'0123456789'.includes(telefone[i])) {
@@ -40,7 +37,6 @@ function registrar() {
         div_result_telefone.innerHTML = ``;
     }
 
-    // VALIDAÇÃO DA SENHA
     let tamanhoSenha = senha.length;
     let temMaiuscula = senha !== senha.toLowerCase();
     let temMinuscula = senha !== senha.toUpperCase();
@@ -73,7 +69,6 @@ function registrar() {
         div_result_senha.innerHTML = ``;
     }
 
-    // VALIDAÇÃO DA CONFIRMAÇÃO DA SENHA
     if (validacaoSenha == '') {
         div_result_confirmacao_senha.innerHTML = `Confirme sua senha`;
         flagError = true;
