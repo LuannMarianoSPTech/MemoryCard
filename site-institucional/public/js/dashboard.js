@@ -85,7 +85,27 @@ function atualizarKpis(favoritos, porPlataforma, porGenero) {
   document.getElementById("kpi-genero").textContent = porGenero[0].genero;
 }
 
-function opcoesBase(eixoValoresHorizontal) {
+// Calcula quanto cada item representa do total de favoritos, em porcentagem.
+// Ex.: 3 favoritos de um total de 10 = 30%.
+function calcularPorcentagens(dados) {
+  let soma = 0;
+  for (let i = 0; i < dados.length; i++) {
+    soma += Number(dados[i].total);
+  }
+
+  const porcentagens = [];
+  for (let i = 0; i < dados.length; i++) {
+    if (soma == 0) {
+      porcentagens.push(0);
+    } else {
+      // arredonda para 1 casa decimal (ex.: 33.3)
+      porcentagens.push(Math.round((Number(dados[i].total) / soma) * 1000) / 10);
+    }
+  }
+  return porcentagens;
+}
+
+function opcoesBase(eixoValoresHorizontal, porcentagens) {
   const eixoValores = {
     beginAtZero: true,
     ticks: { color: COR_TEXTO, precision: 0, stepSize: 1 },
@@ -115,7 +135,7 @@ function opcoesBase(eixoValoresHorizontal) {
         callbacks: {
           label: (ctx) => {
             const valor = eixoValoresHorizontal ? ctx.parsed.x : ctx.parsed.y;
-            return `${valor} ${valor == 1 ? "jogo favorito" : "jogos favoritos"}`;
+            return `${valor} ${valor == 1 ? "jogo favorito" : "jogos favoritos"} (${porcentagens[ctx.dataIndex]}%)`;
           },
         },
       },
@@ -147,7 +167,7 @@ function desenharGraficoPlataformas(dados) {
       labels: dados.map((d) => SIGLAS[d.plataforma] || d.plataforma),
       datasets: [{ label: "Favoritos", data: dados.map((d) => Number(d.total)), ...estiloBarras() }],
     },
-    options: opcoesBase(false),
+    options: opcoesBase(false, calcularPorcentagens(dados)),
   });
 }
 
@@ -161,20 +181,23 @@ function desenharGraficoGeneros(dados) {
       labels: dados.map((d) => d.genero),
       datasets: [{ label: "Favoritos", data: dados.map((d) => Number(d.total)), ...estiloBarras() }],
     },
-    options: opcoesBase(true),
+    options: opcoesBase(true, calcularPorcentagens(dados)),
   });
 }
 
 function preencherTabela(idTabela, dados, campoNome) {
   const corpo = document.getElementById(idTabela);
+  const porcentagens = calcularPorcentagens(dados);
   corpo.innerHTML = "";
-  dados.forEach(function (item) {
+  dados.forEach(function (item, indice) {
     const linha = document.createElement("tr");
     const nome = document.createElement("td");
     const total = document.createElement("td");
+    const porcentagem = document.createElement("td");
     nome.textContent = item[campoNome];
     total.textContent = item.total;
-    linha.append(nome, total);
+    porcentagem.textContent = `${porcentagens[indice]}%`;
+    linha.append(nome, total, porcentagem);
     corpo.appendChild(linha);
   });
 }

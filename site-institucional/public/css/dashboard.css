@@ -41,7 +41,7 @@
 .tabela-dados summary:hover { color: var(--primaria); }
 .tabela-dados table { width: 100%; margin-top: 10px; border-collapse: collapse; }
 .tabela-dados th, .tabela-dados td { padding: 7px 4px; border-bottom: 1px solid var(--borda); text-align: left; }
-.tabela-dados td:last-child, .tabela-dados th:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.tabela-dados td:not(:first-child), .tabela-dados th:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
 
 .dash-vazio { padding: 46px 30px; border: 1px dashed var(--borda); border-radius: 16px; text-align: center; }
 .dash-vazio h2 { margin: 0 0 8px; }

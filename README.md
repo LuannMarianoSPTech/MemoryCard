@@ -32,14 +32,26 @@ Cada plataforma tem uma identidade visual própria, enquanto os componentes de n
 - **Contador automático:** informa quantos cards correspondem à busca.
 - **Identidade visual por plataforma:** cores e atmosfera próprias, com CSS separado.
 - **Layout responsivo:** adaptação para diferentes tamanhos de tela.
+- **Cadastro e login:** formulários com validação em JavaScript, gravando e consultando o banco pela API.
+- **Favoritos:** estrela ☆/★ nos cards para salvar os jogos que marcaram a sua vida.
+- **Dashboard:** indicadores e gráficos dos favoritos por plataforma e por gênero, com a porcentagem de cada um no total.
 
-> **Estado atual:** o front-end funciona com conteúdo escrito diretamente nos arquivos HTML. A API, o banco de dados e a dashboard fazem parte das próximas etapas e **ainda não estão implementados**.
+> **Estado atual:** front-end, API Node.js, banco MySQL e dashboard funcionando de ponta a ponta. O modelo lógico do banco está em `banco-de-dados/modelo-logico.png` e o uso de IA está registrado no [Diário de Prompts](DIARIO_DE_PROMPTS.md).
 
 ## 🛠️ Tecnologias utilizadas
 
 - **HTML5:** estrutura semântica e conteúdo das páginas.
 - **CSS3:** estilos, responsividade e temas das plataformas.
-- **JavaScript:** interatividade dos cards, busca, contagem e imagens de reserva.
+- **JavaScript:** interatividade dos cards, busca, contagem, validações e imagens de reserva.
+- **Node.js + Express:** API com rotas, controllers e models (arquitetura do web-data-viz).
+- **MySQL:** banco `memorycard` com usuários, plataformas, gêneros, jogos e favoritos.
+- **Chart.js:** gráficos da dashboard.
+
+## ▶️ Como executar
+
+1. Rode o script `banco-de-dados/script-tabelas.sql` no MySQL.
+2. Copie `site-institucional/.env.example` para `.env` (e `.env.dev`) e preencha os dados do seu banco.
+3. Na pasta `site-institucional`, rode `npm install` e depois `npm start` (ou `npm run dev`).
 
 ## 💙 Sobre o projeto
 
