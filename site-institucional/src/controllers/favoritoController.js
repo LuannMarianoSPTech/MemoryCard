@@ -33,7 +33,17 @@ function adicionar(req, res) {
     } else {
         favoritoModel.adicionar(idUsuario, idJogo)
             .then((resultado) => res.status(201).json(resultado))
-            .catch((erro) => tratarErro(res, erro, "favoritar o jogo"));
+            .catch(function (erro) {
+                if (erro.code == "ER_DUP_ENTRY") {
+                    // o jogo já estava nos favoritos desse usuário: não é erro
+                    res.status(200).json({ mensagem: "Jogo já estava nos favoritos" });
+                } else if (erro.code == "ER_NO_REFERENCED_ROW_2") {
+                    // chave estrangeira: o jogo ou o usuário não existe no banco
+                    res.status(400).send("Esse jogo ou usuário não existe no banco. Rode o script-tabelas.sql e entre de novo.");
+                } else {
+                    tratarErro(res, erro, "favoritar o jogo");
+                }
+            });
     }
 }
 

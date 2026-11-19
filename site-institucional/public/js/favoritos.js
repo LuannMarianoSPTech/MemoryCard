@@ -68,7 +68,12 @@ botoesFavoritar.forEach(function (botao) {
       }),
     })
       .then(function (resposta) {
-        if (!resposta.ok) throw new Error("Status " + resposta.status);
+        if (!resposta.ok) {
+          // mostra a mensagem que a API mandou (ex.: jogo que não existe no banco)
+          return resposta.text().then(function (texto) {
+            throw new Error(texto || "Status " + resposta.status);
+          });
+        }
         pintarEstrela(botao, !jaFavoritado);
         mostrarAvisoFavorito(
           jaFavoritado
@@ -78,7 +83,7 @@ botoesFavoritar.forEach(function (botao) {
       })
       .catch(function (erro) {
         console.log("#ERRO ao favoritar:", erro);
-        mostrarAvisoFavorito("Não foi possível salvar o favorito. Tente novamente.");
+        mostrarAvisoFavorito("Não foi possível salvar o favorito. " + erro.message);
       })
       .finally(() => (botao.disabled = false));
   });

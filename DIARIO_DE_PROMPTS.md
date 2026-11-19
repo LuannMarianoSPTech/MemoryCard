@@ -47,6 +47,16 @@ Regra que sigo: só entra no projeto o que eu sei explicar.
 - **O que a IA fez:** organizou 14 slides com o projeto (capítulos, site, dashboard, arquitetura, banco, disciplinas, uso de IA) e as minhas respostas, com notas de fala em cada slide.
 - **O que eu usei / mudei:** _(preencher depois de revisar: o que você mudou nos slides)_
 
+### 19/11/2026 – Favoritos não apareciam na dashboard
+- **Assistente:** Claude (mesma conversa)
+- **O que pedi:** "meus favoritos não estão funcionando, não aparecem na dashboard".
+- **O que a IA fez:** rodou o projeto com um banco de teste e mostrou que o código funciona quando o banco tem os 23 jogos do script. Achou o motivo do erro silencioso: o `INSERT IGNORE` descarta o favorito sem avisar quando o jogo não existe na tabela `jogo` (erro de chave estrangeira vira só um aviso), e mesmo assim a API respondia 201.
+- **O que mudou no projeto:**
+  - `src/models/favoritoModel.js`: `INSERT IGNORE` virou `INSERT`.
+  - `src/controllers/favoritoController.js`: jogo repetido (`ER_DUP_ENTRY`) responde 200; jogo ou usuário que não existe (`ER_NO_REFERENCED_ROW_2`) responde 400 com uma mensagem clara.
+  - `public/js/favoritos.js`: o aviso na tela mostra a mensagem que a API mandou.
+- **Como eu explico:** antes, quando o banco recusava o favorito, o erro era escondido. Agora o controller confere o código do erro do MySQL e devolve uma resposta que o front mostra na tela.
+
 ---
 
 ## Modelo para novos registros

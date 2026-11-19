@@ -16,7 +16,7 @@ function listar(idUsuario) {
 
 function adicionar(idUsuario, idJogo) {
     var instrucaoSql = `
-        INSERT IGNORE INTO favorito (fkUsuario, fkJogo) VALUES (${idUsuario}, ${idJogo});
+        INSERT INTO favorito (fkUsuario, fkJogo) VALUES (${idUsuario}, ${idJogo});
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
