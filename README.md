@@ -36,8 +36,6 @@ Cada plataforma tem uma identidade visual própria, enquanto os componentes de n
 - **Favoritos:** estrela ☆/★ nos cards para salvar os jogos que marcaram a sua vida.
 - **Dashboard:** indicadores e gráficos dos favoritos por plataforma e por gênero, com a porcentagem de cada um no total.
 
-> **Estado atual:** front-end, API Node.js, banco MySQL e dashboard funcionando de ponta a ponta. O modelo lógico do banco está em `banco-de-dados/modelo-logico.png` e o uso de IA está registrado no [Diário de Prompts](DIARIO_DE_PROMPTS.md).
-
 ## 🛠️ Tecnologias utilizadas
 
 - **HTML5:** estrutura semântica e conteúdo das páginas.
