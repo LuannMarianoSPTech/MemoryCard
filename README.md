@@ -1,5 +1,4 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f325f,100:123d72&height=120&section=header" alt="" width="100%" />
-
 # 🎮 MemoryCard
 
 **A vida passa. Os jogos ficam.**
