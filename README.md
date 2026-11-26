@@ -51,6 +51,14 @@ Cada plataforma tem uma identidade visual própria, enquanto os componentes de n
 2. Copie `site-institucional/.env.example` para `.env` (e `.env.dev`) e preencha os dados do seu banco.
 3. Na pasta `site-institucional`, rode `npm install` e depois `npm start` (ou `npm run dev`).
 
+## 🔗 Links úteis
+
+| Recurso | Link |
+| --- | --- |
+| 📋 Trello (organização das tarefas) | [trello.com/b/r81lukn8/memorycard](https://trello.com/b/r81lukn8/memorycard) |
+| 📄 Documentação | *Em breve* |
+| 🎞️ Slides da apresentação (Canva) | [Acessar slides](https://canva.link/3hjb0h65rne49c4) |
+
 ## 💙 Sobre o projeto
 
 O MemoryCard nasceu da ideia de que videogames são mais do que entretenimento: eles também fazem parte da nossa história. Uma partida com a família, uma tarde com amigos ou um jogo que parecia impossível de terminar podem se tornar lembranças para a vida inteira.
