@@ -1,6 +1,4 @@
-[<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f325f,100:123d72&height=120&section=header" alt="" width="100%" />
-
-# 🎮 MemoryCard](https://capsule-render.vercel.app/api?type=venom&height=250&color=gradient&section=header&reversal=false&text=Memory+Card&textBg=false&fontSize=70&fontAlign=50&fontAlignY=50&rotate=0&strokeWidth=0&descSize=20&descAlign=50&descAlignY=60)
+https://capsule-render.vercel.app/api?type=venom&height=250&color=gradient&section=header&reversal=false&text=Memory+Card&textBg=false&fontSize=70&fontAlign=50&fontAlignY=50&rotate=0&strokeWidth=0&descSize=20&descAlign=50&descAlignY=60
 
 **A vida passa. Os jogos ficam.**
 
