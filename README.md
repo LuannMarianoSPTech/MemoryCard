@@ -1,4 +1,4 @@
-https://capsule-render.vercel.app/api?type=venom&height=250&color=gradient&section=header&reversal=false&text=Memory+Card&textBg=false&fontSize=70&fontAlign=50&fontAlignY=50&rotate=0&strokeWidth=0&descSize=20&descAlign=50&descAlignY=60
+<img src="https://capsule-render.vercel.app/api?type=venom&height=250&color=gradient&section=header&reversal=false&text=Memory+Card&textBg=false&fontSize=70&fontAlign=50&fontAlignY=50&rotate=0&strokeWidth=0&descSize=20&descAlign=50&descAlignY=60" alt="MemoryCard" width="100%" />
 
 **A vida passa. Os jogos ficam.**
 
@@ -72,4 +72,4 @@ O MemoryCard nasceu da ideia de que videogames são mais do que entretenimento: 
 
 *Projeto individual em desenvolvimento para fins de aprendizado e apresentação acadêmica.*
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:123d72,100:0f325f&height=110&section=footer" alt="" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=venom&height=150&color=gradient&section=footer&reversal=false" alt="" width="100%" />
