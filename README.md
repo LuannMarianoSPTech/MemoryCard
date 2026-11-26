@@ -1,6 +1,6 @@
 <img src="https://capsule-render.vercel.app/api?type=venom&height=250&color=gradient&section=header&reversal=false&text=Memory+Card&textBg=false&fontSize=70&fontAlign=50&fontAlignY=50&rotate=0&strokeWidth=0&descSize=20&descAlign=50&descAlignY=60" alt="MemoryCard" width="100%" />
 
-**A vida passa. Os jogos ficam.**
+**Os jogos passam. As memórias ficam.**
 
 O **MemoryCard** é um projeto pessoal e acadêmico que transforma minha trajetória com videogames em uma máquina do tempo interativa. Cada plataforma representa um capítulo da minha história e reúne os jogos, as descobertas e as memórias que marcaram diferentes fases da minha vida.
 
