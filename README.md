@@ -47,9 +47,14 @@ Cada plataforma tem uma identidade visual própria, enquanto os componentes de n
 
 ## ▶️ Como executar
 
-1. Rode o script `banco-de-dados/script-tabelas.sql` no MySQL.
-2. Copie `site-institucional/.env.example` para `.env` (e `.env.dev`) e preencha os dados do seu banco.
-3. Na pasta `site-institucional`, rode `npm install` e depois `npm start` (ou `npm run dev`).
+1. Clone o repositório e entre na pasta do projeto:
+   ```bash
+   git clone https://github.com/LuannMarianoSPTech/MemoryCard.git
+   cd MemoryCard
+   ```
+2. Rode o script `banco-de-dados/script-tabelas.sql` no MySQL.
+3. Copie `site-institucional/.env.example` para `.env` (e `.env.dev`) e preencha os dados do seu banco.
+4. Na pasta `site-institucional`, rode `npm install` e depois `npm start` (ou `npm run dev`).
 
 ## 🔗 Links úteis
 
