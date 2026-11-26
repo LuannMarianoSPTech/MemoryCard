@@ -71,5 +71,3 @@ O MemoryCard nasceu da ideia de que videogames são mais do que entretenimento: 
 ---
 
 *Projeto individual em desenvolvimento para fins de aprendizado e apresentação acadêmica.*
-
-<img src="https://capsule-render.vercel.app/api?type=venom&height=150&color=gradient&section=footer&reversal=false" alt="" width="100%" />
