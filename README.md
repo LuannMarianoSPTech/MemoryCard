@@ -1,8 +1,6 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f325f,100:123d72&height=120&section=header" alt="" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=venom&height=250&color=gradient&section=header&reversal=false&text=Memory+Card&textBg=false&fontSize=70&fontAlign=50&fontAlignY=50&rotate=0&strokeWidth=0&descSize=20&descAlign=50&descAlignY=60" alt="MemoryCard" width="100%" />
 
-# 🎮 MemoryCard
-
-**A vida passa. Os jogos ficam.**
+**Os jogos passam. As memórias ficam.**
 
 O **MemoryCard** é um projeto pessoal e acadêmico que transforma minha trajetória com videogames em uma máquina do tempo interativa. Cada plataforma representa um capítulo da minha história e reúne os jogos, as descobertas e as memórias que marcaram diferentes fases da minha vida.
 
@@ -47,9 +45,22 @@ Cada plataforma tem uma identidade visual própria, enquanto os componentes de n
 
 ## ▶️ Como executar
 
-1. Rode o script `banco-de-dados/script-tabelas.sql` no MySQL.
-2. Copie `site-institucional/.env.example` para `.env` (e `.env.dev`) e preencha os dados do seu banco.
-3. Na pasta `site-institucional`, rode `npm install` e depois `npm start` (ou `npm run dev`).
+1. Clone o repositório e entre na pasta do projeto:
+   ```bash
+   git clone https://github.com/LuannMarianoSPTech/MemoryCard.git
+   cd MemoryCard
+   ```
+2. Rode o script `banco-de-dados/script-tabelas.sql` no MySQL.
+3. Copie `site-institucional/.env.example` para `.env` (e `.env.dev`) e preencha os dados do seu banco.
+4. Na pasta `site-institucional`, rode `npm install` e depois `npm start` (ou `npm run dev`).
+
+## 🔗 Links úteis
+
+| Recurso | Link |
+| --- | --- |
+| 📋 Trello (organização das tarefas) | [trello.com/b/r81lukn8/memorycard](https://trello.com/b/r81lukn8/memorycard) |
+| 📄 Documentação | *Em breve* |
+| 🎞️ Slides da apresentação (Canva) | [Acessar slides](https://canva.link/3hjb0h65rne49c4) |
 
 ## 💙 Sobre o projeto
 
@@ -60,5 +71,3 @@ O MemoryCard nasceu da ideia de que videogames são mais do que entretenimento: 
 ---
 
 *Projeto individual em desenvolvimento para fins de aprendizado e apresentação acadêmica.*
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:123d72,100:0f325f&height=110&section=footer" alt="" width="100%" />
